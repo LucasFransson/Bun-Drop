@@ -20,7 +20,7 @@
 		{
 			"id": 2,
 			"name": "Chicken Delight",
-			"image": "http://placekitten.com/200/300",
+			"image": "",
 			"category": "Poultry",
 			"price": 9.99,
 			"description": "Juicy grilled chicken for a lighter touch.",
@@ -37,7 +37,7 @@
 		{
 			"id": 3,
 			"name": "Spicy Bean Burger",
-			"image": "http://placekitten.com/200/300",
+			"image": "",
 			"category": "Vegan",
 			"price": 11.49,
 			"description": "A fiery explosion of taste with wholesome beans.",
@@ -54,7 +54,7 @@
 		{
 			"id": 4,
 			"name": "Veggie Supreme",
-			"image": "http://placekitten.com/200/300",
+			"image": "",
 			"category": "Vegetarian",
 			"price": 10.49,
 			"description": "An array of fresh veggies packed into a delicious burger.",
@@ -71,7 +71,7 @@
 		{
 			"id": 5,
 			"name": "Cheese Lovers",
-			"image": "http://placekitten.com/200/300",
+			"image": "",
 			"category": "Meat",
 			"price": 11.99,
 			"description": "Loaded with an extra portion of cheese for the cheese fanatics.",
@@ -88,7 +88,7 @@
 		{
 			"id": 6,
 			"name": "BBQ Bacon Burger",
-			"image": "http://placekitten.com/200/300",
+			"image": "",
 			"category": "Meat",
 			"price": 12.99,
 			"description": "A tangy BBQ burger topped with crispy bacon.",
@@ -106,7 +106,7 @@
 		{
 			"id": 7,
 			"name": "Garden Fresh Vegan",
-			"image": "http://placekitten.com/200/300",
+			"image": "",
 			"category": "Vegan",
 			"price": 11.99,
 			"description": "A true garden delight packed with fresh vegetables and a vegan patty.",
@@ -124,7 +124,7 @@
 		{
 			"id": 8,
 			"name": "Mushroom Swiss Burger",
-			"image": "http://placekitten.com/200/300",
+			"image": "",
 			"category": "Meat",
 			"price": 12.49,
 			"description": "A juicy beef patty topped with Swiss cheese and mushrooms.",
@@ -141,7 +141,7 @@
 		{
 			"id": 9,
 			"name": "Grilled Portobello",
-			"image": "http://placekitten.com/200/300",
+			"image": "",
 			"category": "Vegetarian",
 			"price": 11.49,
 			"description": "Grilled Portobello mushroom cap with fresh veggies and cheese.",
@@ -158,7 +158,7 @@
 		{
 			"id": 10,
 			"name": "Beyond Meat Burger",
-			"image": "http://placekitten.com/200/300",
+			"image": "",
 			"category": "Vegan",
 			"price": 13.99,
 			"description": "A plant-based burger that tastes like real meat.",

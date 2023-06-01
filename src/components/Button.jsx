@@ -1,5 +1,5 @@
 import React from 'react';
-function Button({ onClick, text, type = 'button', styleClass }) {
+function Button({ onClick, text, textSub, type = 'button', styleClass }) {
 	return (
 		<button type={type} onClick={onClick} className={styleClass}>
 			{text}
