@@ -1,4 +1,4 @@
-import './App.css';
+import '../css/style.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import useFetch from './hooks/useFetch';
 import BurgerDetails from './pages/BurgerDetails';

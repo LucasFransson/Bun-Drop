@@ -1,3 +1,16 @@
+/*
+0-600px:Phone
+6-900px: Tablet Portrait
+9-1200px: Tablet Landscape
+12-1800px: (Default) Desktop
+1800px+: Big Desktop
+
+$breakpoint argument choices
+-phone 
+-tab-port
+-tab-land
+-big-desktop
+*/
 @keyframes fadeColor {
   0% {
     opacity: 0; }
@@ -14,50 +27,23 @@
 html {
   font-size: 62.5%;
   /* Is set to 62.5% using this formula : default font-size is 16px while We want 10px. 10/16 = 0.625 aka 62.5 % */ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.25em) {
+    html {
+      font-size: 75%; } }
 
 body {
   padding: 3rem;
   box-sizing: border-box;
   background-color: #080709; }
-
-@media screen and (max-width: 1500px) {
-  html {
-    font-size: 9px; } }
-
-@media screen and (max-width: 1200px) {
-  html {
-    font-size: 7px; } }
-
-@media screen and (max-width: 850px) {
-  html {
-    font-size: 31.25%;
-    /* Same as font-size : 5px; */ }
-    html .header {
-      height: 25vh; }
-    html .footer {
-      height: 20vh; }
-    html .footer__container--upper {
-      font-size: 15px; } }
-
-@media screen and (max-width: 650px) {
-  html {
-    font-size: 3.5px; }
-    html .hero-section__text--sub {
-      font-size: 13px; }
-    html .footer {
-      height: 15vh; }
-    html .footer__container--upper {
-      font-size: 13px; } }
-
-@media screen and (max-width: 450px) {
-  html {
-    font-size: 3.5px; }
-    html .hero-section__text--sub {
-      font-size: 9px; }
-    html .footer {
-      height: 12vh; }
-    html .footer__container--upper {
-      font-size: 9px; } }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;

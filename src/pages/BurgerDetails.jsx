@@ -1,6 +1,12 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import useFetch from '../hooks/useFetch';
+import Button from '../components/button';
 
-function BurgerDetails({ burger }) {
+function BurgerDetails() {
+	const { burgerId } = useParams();
+	const burger = useFetch(`http://localhost:7000/burgers/${burgerId}`, []);
+
 	return (
 		<>
 			<div>
@@ -9,18 +15,28 @@ function BurgerDetails({ burger }) {
 				<p>Category: {burger.category}</p>
 				<p>Price: ${burger.price}</p>
 				<p>Description: {burger.description}</p>
-				<ul>
-					<li>Ingredients:</li>
-					{burger.ingredients.map((ingredient, index) => (
-						<li key={index}>{ingredient}</li>
-					))}
-				</ul>
+				{burger.ingredients ? (
+					<ul>
+						<li>Ingredients:</li>
+						{burger.ingredients.map((ingredient, index) => (
+							<li key={index}>{ingredient}</li>
+						))}
+					</ul>
+				) : (
+					<p>Ingredients not found</p>
+				)}
 				<div>
-					<h3>Nutrients:</h3>
-					<p>Calories: {burger.nutrients.calories}</p>
-					<p>Protein: {burger.nutrients.protein}g</p>
-					<p>Carbs: {burger.nutrients.carbs}g</p>
-					<p>Fat: {burger.nutrients.fat}g</p>
+					{burger.nutrients ? (
+						<>
+							<h3>Nutrients:</h3>
+							<p>Calories: {burger.nutrients.calories}</p>
+							<p>Protein: {burger.nutrients.protein}g</p>
+							<p>Carbs: {burger.nutrients.carbs}g</p>
+							<p>Fat: {burger.nutrients.fat}g</p>
+						</>
+					) : (
+						<p>Nutrients not found</p>
+					)}
 				</div>
 
 				<Button

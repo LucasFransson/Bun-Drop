@@ -37,7 +37,9 @@ const useFetch = (url, initialState) => {
 			.then((response) =>
 				response
 					.json()
-					.then((jsonData) => setData(jsonData))
+					.then((jsonData) => {
+						setData(jsonData);
+					})
 					.catch((error) => console.error(error))
 			)
 			.catch((error) => console.error(error));
