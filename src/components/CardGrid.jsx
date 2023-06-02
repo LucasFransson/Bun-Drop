@@ -6,7 +6,7 @@ function CardGrid({ items, Component, linkPrefix }) {
 		<>
 			<div className="grid-container">
 				{items.map((item) => (
-					<div key={item.id}>
+					<div className="grid-container__item" key={item.id}>
 						<Link to={`/${linkPrefix}/${item.id}`}>
 							<Component {...item} />
 						</Link>

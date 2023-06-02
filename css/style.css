@@ -171,7 +171,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 35%;
   background-color: #080808;
   border: 0.3rem solid #ffd482;
   border-radius: 1.2rem;
@@ -295,6 +294,11 @@ body {
     filter: drop-shadow(0.2rem 0.6rem 1rem #080808);
     box-shadow: 0rem 0.5rem 1rem rgba(96, 91, 104, 0.2); }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 1rem; }
+
 .header {
   position: relative;
   height: 40vh;
@@ -315,3 +319,13 @@ body {
     font-size: 2rem;
     font-weight: 800;
     letter-spacing: 1.2rem; }
+
+.product p,
+.product h1,
+.product h2,
+.product h3,
+.product h4,
+.product h5,
+.product h6 {
+  color: white;
+  font-size: 16px; }

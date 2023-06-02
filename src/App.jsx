@@ -1,31 +1,37 @@
 import '../css/style.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import useFetch from './hooks/useFetch';
-import BurgerDetails from './pages/BurgerDetails';
+import ProductPage from './pages/ProductPage';
 import Menu from './pages/Menu';
 import Card from './components/MenuItemCard';
 import HomePage from './pages/HomePage';
 import Footer from './components/Footer';
+import Cart from './components/Cart';
+import { CartProvider } from './utils/CartContext';
 
 function App() {
 	const items = useFetch('http://localhost:7000/burgers', []);
 
 	return (
 		<>
-			<Router>
-				<Link to={'/menu'}>
-					<button>Menu</button>
-				</Link>
+			<CartProvider>
+				<Router>
+					<Link to={'/menu'}>
+						<button>Menu</button>
+					</Link>
 
-				<div>
-					<Routes>
-						<Route path="/" element={<HomePage />} />
-						<Route path="/menu/:burgerId" element={<BurgerDetails />} />
-						<Route path="/menu" element={<Menu />} />
-					</Routes>
-				</div>
-			</Router>
-			<Footer />
+					<div>
+						<Routes>
+							<Route path="/" element={<HomePage />} />
+							<Route path="/menu/:burgerId" element={<ProductPage />} />
+							<Route path="/menu" element={<Menu />} />
+						</Routes>
+					</div>
+				</Router>
+				<Footer />
+
+				<Cart />
+			</CartProvider>
 		</>
 	);
 }
