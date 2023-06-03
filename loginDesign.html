@@ -9,31 +9,33 @@
 	</head>
 	<body>
 		<div class="container">
+			<div class="container__side-background">&nbsp;</div>
 			<form class="login-form">
 				<div class="login">
-					<h2 class="login__title">User Login</h2>
+					<h2 class="login__item login__title">User Login</h2>
 
-					<label for="login-name">Name</label>
+					<label for="login-name" class="login__item">Name</label>
 					<input
 						type="text"
-						class="login__input--name"
+						class="login__item login__input--name"
 						id="login-name"
 						placeholder="name"
 						required
 					/>
 
-					<label for="login-password">Password</label>
+					<label for="login-password" class="login__item">Password</label>
 					<input
 						type="password"
-						class="login__input--password"
+						class="login__item login__input--password"
 						id="login-password"
 						placeholder="password"
 						required
 					/>
 
-					<button type="submit" class="login__btn">Login</button>
+					<button type="submit" class="login__item login__btn">Login</button>
 				</div>
 			</form>
+			<div class="container__bottom-background">&nbsp;</div>
 		</div>
 	</body>
 </html>
