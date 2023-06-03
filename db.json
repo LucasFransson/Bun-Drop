@@ -292,5 +292,7 @@
 			"ingredients": ["Kale", "Spinach", "Green Apple", "Celery", "Lemon"],
 			"nutrients": { "calories": 140, "sugar": 20 }
 		}
-	]
+	],
+
+	"users": []
 }
