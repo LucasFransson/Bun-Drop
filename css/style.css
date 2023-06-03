@@ -69,82 +69,6 @@ body {
 .u-margin-top-huge {
   margin-bottom: 10rem !important; }
 
-.anchor-top {
-  display: flex;
-  flex-direction: row;
-  place-items: flex-start;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0; }
-
-.anchor-bottom {
-  display: flex;
-  flex-direction: row;
-  place-items: flex-end;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0; }
-
-.anchor-center {
-  display: flex;
-  flex-direction: row;
-  place-items: center;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0; }
-
-.anchor-left {
-  display: flex;
-  flex-direction: row;
-  place-content: flex-start;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0; }
-
-.anchor-right {
-  display: flex;
-  flex-direction: row;
-  place-content: flex-end;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0; }
-
-.anchor-center-hor {
-  display: flex;
-  flex-direction: row;
-  place-content: center;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0; }
-
-.flex-container-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0; }
-
-.flex-container-row-reverse {
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0; }
-
-.flex-container-column {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0; }
-
-.flex-container-column-reverse {
-  display: flex;
-  flex-direction: column-reverse;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  flex-grow: 0; }
-
 .btn {
   width: 28rem;
   height: 6rem;
@@ -346,3 +270,31 @@ body {
 .product li {
   color: white;
   font-size: 16px; }
+
+.container {
+  width: 400px;
+  margin: auto;
+  padding: 36px 48px 48px 48px;
+  background-color: #6b676e;
+  border-radius: 11px;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15); }
+
+.login-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 16px; }
+  .login-form label {
+    display: block;
+    margin-bottom: 8px; }
+
+.login__title {
+  padding: 15px;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center; }
+
+.login__input {
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 9px;
+  border: none; }

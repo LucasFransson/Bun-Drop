@@ -5,6 +5,18 @@
 	height: 100vh;
 }
 
+@mixin grid-auto($maxWidth, $fr, $grid-gap) {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax($maxWidth, $frfr));
+	grid-gap: $grid-gap;
+}
+
+@mixin grid($columns, $fr, $grid-gap) {
+	display: grid;
+	grid-template-rows: repeat($columns, $fr);
+	grid-gap: $grid-gap;
+}
+
 // Mixin/shorthand for setting a gradient background
 @mixin gradient($color-start, $color-end, $orientation) {
 	background-image: linear-gradient(to $orientation, $color-start, $color-end);
@@ -39,51 +51,6 @@
 	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
-}
-
-// Mixin for defining a flexbox in one line, Creds : nicolacastellanidev@gmail.com
-
-@mixin flexbox(
-	$display: flex,
-	$direction: row,
-	$placeContent: null,
-	$placeItems: null,
-	$wrap: nowrap,
-	$shrink: 0,
-	$grow: 0,
-	$alignContent: null,
-	$justifyContent: null,
-	$alignItems: null,
-	$justifyItems: null
-) {
-	display: $display;
-	flex-direction: $direction;
-
-	@if $placeContent == null {
-		@if $alignContent {
-			align-content: $alignContent;
-		}
-		@if $justifyContent {
-			justify-content: $justifyContent;
-		}
-	} @else {
-		place-content: $placeContent;
-	}
-
-	@if $placeItems == null {
-		@if $alignItems {
-			align-items: $alignItems;
-		}
-		@if $justifyItems {
-			justify-items: $justifyItems;
-		}
-	} @else {
-		place-items: $placeItems;
-	}
-
-	flex-wrap: $wrap;
-	flex-shrink: $shrink;
-	flex-grow: $grow;
 }
 
 // MEDIA QUERY MANAGER
@@ -126,69 +93,5 @@ $breakpoint argument choices
 			//>1800px
 			@content;
 		}
-	}
-}
-
-// MIXINS FROM GISTS & OTHER SOURCES
-
-// Mixin for handling box-sizing & prefixes
-@mixin box-sizing($sizing) {
-	-webkit-box-sizing: $sizing;
-	-moz-box-sizing: $sizing;
-	box-sizing: $sizing;
-}
-
-// Mixin for handling opacity & old browsers
-@mixin opacity($opacity) {
-	opacity: $opacity;
-	filter: alpha(opacity=($opacity * 100));
-}
-
-// Mixin for transforming pixels to rem
-@mixin font-size($size) {
-	font-size: $size;
-	font-size: ($size / 16px) * 1rem;
-}
-
-// Mixin for setting box-shadow on an element & prefixes
-@mixin box-shadow($shadow...) {
-	-webkit-box-shadow: $shadow;
-	-moz-box-shadow: $shadow;
-	box-shadow: $shadow;
-}
-
-@mixin border-radius($radius) {
-	-webkit-border-radius: $radius;
-	-moz-border-radius: $radius;
-	border-radius: $radius;
-
-	-moz-background-clip: padding;
-	-webkit-background-clip: padding-box;
-}
-
-// Mixin for styling a button with a "ghost" effect
-@mixin ghost-button(
-	$font,
-	$font-size,
-	$font-color,
-	$border-size,
-	$border-color,
-	$padding,
-	$transition-speed,
-	$hover-color
-) {
-	display: inline-block;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-family: $font;
-	font-size: $font-size;
-	color: $font-color;
-	border: $border-size solid $border-color;
-	padding: $padding;
-	-webkit-transition: color $transition-speed, background $transition-speed;
-	transition: color $transition-speed, background $transition-speed;
-	&:hover {
-		background: $border-color;
-		color: $hover-color;
 	}
 }
