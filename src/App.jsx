@@ -3,8 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import useFetch from './hooks/useFetch';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Cart from './components/Cart';
-import BrowserConfig from './utils/BrowserConfig';
+import RoutesConfig from './utils/RoutesConfig';
 import { CartProvider } from './utils/CartContext';
 
 function App() {
@@ -15,7 +14,7 @@ function App() {
 			<Router>
 				<CartProvider>
 					<Navbar />
-					<BrowserConfig />
+					<RoutesConfig />
 					<Footer />
 				</CartProvider>
 			</Router>

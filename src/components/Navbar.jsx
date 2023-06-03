@@ -5,17 +5,19 @@ function Navbar() {
 	return (
 		<>
 			<nav className="navbar">
-				<ul className="navbar__list">
-					<li className="navbar__list--item">
-						<Link to={'/menu'}>
-							<button>Menu</button>
-						</Link>
+				<ul className="navbar-list">
+					<li className="navbar-list__item">
+						<Link to={'/menu'}>Menu</Link>
 					</li>
-					<li className="navbar__list--item">Home</li>
-					<li className="navbar__list--item">Search</li>
-					<li className="navbar__list--item">Cart</li>
-					<li className="navbar__list--item">Settings</li>
-					<li className="navbar__list--item">User</li>
+					<li className="navbar-list__item">
+						<Link to={'/'}>Home</Link>
+					</li>
+					<li className="navbar-list__item">Search</li>
+					<li className="navbar-list__item">
+						<Link to={'/cart'}>Cart</Link>
+					</li>
+					<li className="navbar-list__item">Settings</li>
+					<li className="navbar-list__item">User</li>
 				</ul>
 			</nav>
 		</>

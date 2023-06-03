@@ -3,13 +3,13 @@
 	width: 100%;
 	background: linear-gradient(to bottom, $color-black, $color-black-2);
 
-	&__list {
+	&-list {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;
 		gap: 10rem;
 
-		&--item {
+		&__item {
 			list-style: none;
 			font-size: 20px;
 			cursor: pointer;
