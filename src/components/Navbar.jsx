@@ -17,7 +17,9 @@ function Navbar() {
 						<Link to={'/cart'}>Cart</Link>
 					</li>
 					<li className="navbar-list__item">Settings</li>
-					<li className="navbar-list__item">User</li>
+					<li className="navbar-list__item">
+						<Link to={'/login'}>User</Link>
+					</li>
 				</ul>
 			</nav>
 		</>

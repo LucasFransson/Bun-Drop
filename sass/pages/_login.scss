@@ -1,5 +1,9 @@
 .container {
-	background-color: $color-gray-dark-2;
+	background: linear-gradient(
+		to bottom right,
+		$color-gray-dark-1,
+		$color-gray-dark-2
+	);
 	width: 55rem;
 	height: 70rem;
 	margin: 10rem;

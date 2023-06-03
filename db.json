@@ -294,5 +294,11 @@
 		}
 	],
 
-	"users": []
+	"users": [
+		{
+			"id": 1,
+			"name": "user",
+			"password": "password"
+		}
+	]
 }
