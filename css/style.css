@@ -320,12 +320,28 @@ body {
     font-weight: 800;
     letter-spacing: 1.2rem; }
 
+.navbar {
+  color: white;
+  width: 100%;
+  background: linear-gradient(to bottom, #080808, #292828); }
+  .navbar__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10rem; }
+    .navbar__list--item {
+      list-style: none;
+      font-size: 20px;
+      cursor: pointer; }
+
 .product p,
 .product h1,
 .product h2,
 .product h3,
 .product h4,
 .product h5,
-.product h6 {
+.product h6,
+.product ul,
+.product li {
   color: white;
   font-size: 16px; }
