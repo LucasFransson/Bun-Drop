@@ -1,12 +1,10 @@
 import '../css/style.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
 import useFetch from './hooks/useFetch';
-import ProductPage from './pages/ProductPage';
-import Menu from './pages/Menu';
-import Card from './components/MenuItemCard';
-import HomePage from './pages/HomePage';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Cart from './components/Cart';
+import Browser from './utils/Browser';
 import { CartProvider } from './utils/CartContext';
 
 function App() {
@@ -15,22 +13,8 @@ function App() {
 	return (
 		<>
 			<CartProvider>
-				<Router>
-					<Link to={'/menu'}>
-						<button>Menu</button>
-					</Link>
-
-					<div>
-						<Routes>
-							<Route path="/" element={<HomePage />} />
-							<Route path="/menu/:burgerId" element={<ProductPage />} />
-							<Route path="/menu" element={<Menu />} />
-						</Routes>
-					</div>
-				</Router>
+				<Browser />
 				<Footer />
-
-				<Cart />
 			</CartProvider>
 		</>
 	);
