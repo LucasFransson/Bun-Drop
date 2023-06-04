@@ -4,6 +4,7 @@ import Button from '../components/button';
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../utils/CartContext';
 import { addToCart } from '../utils/cartService';
+import { addFavorite, getUserName, getUserId } from '../utils/userService';
 
 function ProductPage() {
 	const { burgerId } = useParams();
@@ -72,6 +73,15 @@ function ProductPage() {
 					text="Go to Home Page"
 					onClick={() => history.push('/')}
 					styleClass="btn btn__nav "
+				></Button>
+
+				<Button
+					text="Add Favorite"
+					onClick={async () => {
+						const userId = await getUserId(getUserName());
+						addFavorite(userId, burgerId);
+					}}
+					styleClass="btn btn--favorite"
 				></Button>
 			</div>
 		</>
