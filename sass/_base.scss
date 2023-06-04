@@ -19,8 +19,8 @@ body {
 
 	background: linear-gradient(
 		to bottom right,
-		$color-primary-1,
-		$color-primary-dark-1
+		$color-primary-1 20%,
+		$color-primary-dark-1 70%
 	);
 	min-height: 100vh;
 }

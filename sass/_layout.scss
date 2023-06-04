@@ -9,10 +9,10 @@ $color-gray-dark-1: #404040; // not part of color palette!
 $color-black-1: #191e29; // color blackish blueish
 $color-black-2: #140b0e; // color blackish redish
 
-$--shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+$--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 
 .container {
-	box-shadow: var(--shadow-dark);
+	box-shadow: $--shadow-dark;
 	max-width: 150rem;
 	margin: 10rem auto;
 	min-height: 60rem;
@@ -38,12 +38,6 @@ $--shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 .content {
 	display: flex;
 	background-color: $color-white-1;
-
-	& > * {
-		// testing purposes only, giving some space
-		// margin: 2rem;
-		// padding: 2rem;
-	}
 }
 
 .sidebar {
@@ -55,15 +49,12 @@ $--shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 }
 
 .side-nav {
-	// display: flex;
-	// flex-direction: column;
-
 	font-size: 1.7rem;
 	margin-top: 4rem;
 	list-style: none;
 
 	&__item {
-		background-color: rgba(240, 255, 255, 0.124);
+		color: $color-primary-1;
 		position: relative;
 		display: flex;
 		align-items: center;
@@ -82,7 +73,6 @@ $--shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 		height: 100%;
 		width: 3px;
 		background-color: $color-primary-1;
-		background-color: yellowgreen;
 	}
 
 	&__link:link,
@@ -112,27 +102,26 @@ $--shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 	padding: 2rem 0;
 	background-color: $color-gray-dark-1; // Testing purposes only
 	height: 60rem; // testing purposes only
-	//width: 85rem; //testing purposes only
+
 	flex: 1;
 }
 .section-hero {
-	background-color: blue; // Testing purposes only
-	//height: 35rem; // testing purposes only
 	flex: 0 0 35rem;
 	margin-bottom: 2rem;
 }
 .section-info {
-	background-color: green; // Testing purposes only
-	// flex: 1; // takes up remaining space, NOT SURE IF THIS IS RIGHT HERE. Maybe some content will be beneath, consider changing
 }
 .section-menu {
-	background-color: yellow; // Testing purposes only
 	flex: 1; // takes up the remaining space
 }
 .footer {
 	background-color: $color-black-1;
-	background-color: tomato;
+	border-top: 1px solid $color-gray-dark-1;
 	height: 12rem; // testing purposes only
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 
 	&__navigation {
 	}
@@ -140,16 +129,26 @@ $--shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 	&__list {
 		display: flex;
 		flex-direction: row;
+		justify-content: space-around;
 		list-style: none;
 	}
 
 	&__item {
+		// &:not(:last-child) {
+		// 	margin-right: 1rem;
+		// }
 	}
-	&__link {
+	&__link:link,
+	&__link:visited {
+		text-decoration: none;
+		color: $color-gray-dark-1;
 	}
 	&__logo-box {
 	}
 
 	&__logo {
+		width: 8rem;
+		height: 8rem;
+		filter: hue-rotate(-22deg) saturate(3.5);
 	}
 }
