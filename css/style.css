@@ -13,24 +13,64 @@
 
 .sidebar {
   background-color: #191e29;
-  flex: 0 0 17%; }
+  flex: 0 0 17%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; }
+
+.side-nav {
+  font-size: 1.7rem;
+  margin-top: 4rem;
+  list-style: none; }
+  .side-nav__item {
+    background-color: rgba(240, 255, 255, 0.124);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .side-nav__item:not(:last-child) {
+      margin-bottom: 1rem; }
+  .side-nav__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #c72c41;
+    background-color: yellowgreen; }
+  .side-nav__link:link, .side-nav__link:visited {
+    color: #c72c41;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
+    display: inline-block;
+    position: relative;
+    display: flex;
+    align-items: center; }
+  .side-nav__icon {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 2rem;
+    fill: currentColor; }
 
 .main {
   display: flex;
   flex-direction: column;
+  padding: 2rem 0;
   background-color: #404040;
   height: 60rem;
-  width: 85rem; }
-
-.hero {
-  background-color: blue;
-  flex: 0 0 35rem; }
-
-.info {
-  background-color: green;
   flex: 1; }
 
-.menu {
+.section-hero {
+  background-color: blue;
+  flex: 0 0 35rem;
+  margin-bottom: 2rem; }
+
+.section-info {
+  background-color: green; }
+
+.section-menu {
   background-color: yellow;
   flex: 1; }
 
@@ -40,7 +80,8 @@
   height: 12rem; }
   .footer__list {
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    list-style: none; }
 
 *,
 *::before,
