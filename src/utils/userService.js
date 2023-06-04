@@ -20,48 +20,12 @@ export function registerUser(username, password) {
 		});
 }
 
-// function logInUser(username) {
-// 	localStorage.setItem('username');
-
-// 	window.location.href = 'index.html';
-// }
-
-// export function getUserId() {
-// 	const username = localStorage.getItem('username');
-// 	const user = fetch(`http://localhost:3000/users/${username}`).then(
-// 		(response) => response.json()
-// 	);
-// 	const userId = user.id;
-// 	return userId;
-// }
-
-// export function getUserId(username) {
-// 	const user = fetch(`http://localhost:3000/users/${username}`).then(
-// 		(response) => response.json()
-// 	);
-// 	const userId = user.id;
-// 	return userId;
-// }
-
-// export async function getUserId(username) {
-// 	try {
-// 		console.log(username); // Add this line
-// 		const response = await fetch(`http://localhost:3000/users/${username}`);
-// 		const user = await response.json();
-// 		console.log(user); // Add this line
-// 		const userId = user.id;
-// 		return userId;
-// 	} catch (error) {
-// 		console.error('Error:', error);
-// 	}
-// }
-
 export function getUserName() {
 	const username = localStorage.getItem('username');
 	return username;
 }
 
-// REFACTOR !!! Check if possible to just add object in localstorage instead
+// REFACTOR THIS ASAP, MESSY CODE & REALLY STUPID USE OF LOCALSTORAGE!!   Check if possible to just add object in localstorage instead
 export async function getUserId(username) {
 	try {
 		const response = await fetch(`http://localhost:7000/users`);
@@ -80,75 +44,22 @@ export async function getUserId(username) {
 export async function addFavorite(userId, item) {
 	const response = await fetch(`http://localhost:7000/users/${userId}`);
 	const user = await response.json();
+	console.log(item);
+	const foundProduct = user.favorites.find((product) => product === item); // SHOULD BE ITEM.ID AND PRODUCT.ID, THIS IS WRONG BECAUSE THE REST OF THE CODE IS WRONG FIX THIS
+	if (!foundProduct) {
+		user.favorites.push(item);
 
-	user.favorites.push(item);
-
-	return fetch(`http://localhost:7000/users/${userId}`, {
-		method: 'PUT',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify(user),
-	});
+		return fetch(`http://localhost:7000/users/${userId}`, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(user),
+		});
+	} else {
+		return Promise.reject(new Error('Product already in favorites'));
+	}
 }
-
-//export function addFavorite(userId, item) {
-// 	return fetch(`http://localhost:7000/users/${userId}/favorites`, {
-// 		method: 'POST',
-// 		headers: {
-// 			'Content-Type': 'application/json',
-// 		},
-// 		body: JSON.stringify({
-// 			item: item,
-// 		}),
-// 	});
-// }
-
-// export async function addFavorite(userId, item) {
-//     try {
-//         const response = await fetch(`http://localhost:7000/users/${userId}/favorites`, {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify({
-//                 item: item,
-//             }),
-//         });
-//         const user = await response.json();
-//         return user;
-//     } catch (error) {
-//         console.error('Error:', error);
-//     }
-
-// export function addFavorite(userId, item) {
-// 	return fetch(`http://localhost:3000/users/${userId}/favorites`, {
-// 		method: 'POST',
-// 		headers: {
-// 			'Content-Type': 'application/json',
-// 		},
-// 		body: JSON.stringify({
-// 			item: item,
-// 		}),
-// 	});
-// }
-
-// export async function addFavorite(userId, item) {
-//     try {
-//         const response = await fetch(`http://localhost:7000/users/${userId}/favorites`, {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify({
-//                 item: item,
-//             }),
-//         });
-//         const user = await response.json();
-//         return user;
-//     } catch (error) {
-//         console.error('Error:', error);
-//     }}
 
 export function logOutUser(username) {
 	localStorage.removeItem('username');

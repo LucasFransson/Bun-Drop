@@ -21,6 +21,31 @@ function ProductPage() {
 
 		setCart((prevCart) => [...prevCart, itemWithQuantity]);
 	};
+	// const handleAddFavorite = (user) => {
+
+	// 	const foundProduct = user.favorites.find((product) => product.id === burger.id);
+	// 	if (!foundProduct) {
+	// 		addFavorite(user.id, burger.id);
+	// 		return;
+	// 	}
+	// }
+
+	// async function handleAddFavorite() {
+	// 	const userId = await getUserId(getUserName());
+	// 	const foundProduct = user.favorites.find(
+	// 		(product) => product.id === burger.id
+	// 	);
+	// 	if (!foundProduct) {
+	// 		addFavorite(userId, burger.id);
+	// 		return;
+	// 	}
+	// }
+
+	const handleRemoveFromCart = (id) => {
+		const filteredCart = cart.filter((item) => item.id !== id);
+
+		setCart(filteredCart);
+	};
 
 	return (
 		<>
