@@ -1,0 +1,106 @@
+$color-primary-1: #c72c41;
+$color-primary-dark-1: #801336;
+
+$color-white-1: #fff;
+
+$color-gray-light-1: #d9d9d9;
+$color-gray-dark-1: #404040; // not part of color palette!
+
+$color-black-1: #191e29; // color blackish blueish
+$color-black-2: #140b0e; // color blackish redish
+
+$--shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+
+.container {
+	box-shadow: var(--shadow-dark);
+	max-width: 150rem;
+	margin: 10rem auto;
+	min-height: 60rem;
+}
+.header {
+	background-color: $color-gray-light-1;
+}
+
+.search {
+	&__input {
+	}
+
+	&__button {
+	}
+}
+
+.content {
+	display: flex;
+	background-color: $color-white-1;
+
+	& > * {
+		// testing purposes only, giving some space
+		// margin: 2rem;
+		// padding: 2rem;
+	}
+}
+
+.sidebar {
+	background-color: $color-black-1;
+	flex: 0 0 17%;
+}
+
+.user-nav {
+	&__user {
+	}
+	&__user-photo {
+	}
+}
+
+.side-nav {
+	&__item {
+	}
+
+	&__link {
+	}
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+
+	background-color: $color-gray-dark-1; // Testing purposes only
+	height: 60rem; // testing purposes only
+	width: 85rem; //testing purposes only
+}
+.hero {
+	background-color: blue; // Testing purposes only
+	//height: 35rem; // testing purposes only
+	flex: 0 0 35rem;
+}
+.info {
+	background-color: green; // Testing purposes only
+	flex: 1; // takes up remaining space, NOT SURE IF THIS IS RIGHT HERE. Maybe some content will be beneath, consider changing
+}
+.menu {
+	background-color: yellow; // Testing purposes only
+	flex: 1; // takes up the remaining space
+}
+.footer {
+	background-color: $color-black-1;
+	background-color: tomato;
+	height: 12rem; // testing purposes only
+
+	&__navigation {
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: row;
+	}
+
+	&__item {
+	}
+	&__link {
+	}
+	&__logo-box {
+	}
+
+	&__logo {
+	}
+}

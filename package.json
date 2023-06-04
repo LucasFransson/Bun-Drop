@@ -10,7 +10,6 @@
 		"preview": "vite preview",
 		"json-server": "json-server --watch db.json --port 7000",
 		"compile-sass": "node-sass sass/main.scss css/style.css -w",
-		"start-dep": "npm run compile-sass && npm run json-server",
 		"test": "jest --config=jest.config.cjs"
 	},
 	"dependencies": {
