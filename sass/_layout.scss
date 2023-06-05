@@ -1,4 +1,5 @@
 $color-primary-1: #c72c41;
+$color-primary-light-1: #db3d52;
 $color-primary-dark-1: #801336;
 
 $color-white-1: #fff;
@@ -21,7 +22,7 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 }
 .header {
 	background-color: $color-gray-light-1;
-
+	border-bottom: 1px solid$color-black-1;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -113,7 +114,7 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 		width: 100%;
 	}
 	&__item:active::before {
-		background-color: var(--color-primary-light);
+		background-color: $color-primary-light-1;
 	}
 
 	// &__item:hover + &__link {
@@ -148,7 +149,7 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	display: flex;
 	flex-direction: column;
 	padding: 2rem 0;
-	background-color: $color-gray-dark-1; // Testing purposes only
+	background-color: $color-gray-light-1;
 	height: 60rem; // testing purposes only
 
 	flex: 1;
@@ -156,22 +157,46 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 }
 .section-hero {
 	display: flex;
-	flex-direction: column;
-	justify-content: end;
-	flex: 0 0 35rem;
+	flex-direction: row;
+	justify-content: center;
+	flex: 0 0 40rem;
+	width: 80rem; // change to flex-basis for responsive design
 	margin-bottom: 2rem;
+	border-bottom: 1px solid $color-black-1;
+	position: relative; // positioning for the pseudo-element background
 
-	background: linear-gradient(
-		to bottom,
-		$color-primary-1,
-		$color-primary-dark-1
-	);
-	clip-path: polygon(0 0, 100% 0, 100% 60%, 0 80%);
-
-	&__button {
+	&::before {
+		// gradient background
+		content: '';
 		position: absolute;
-		top: 50%;
-		left: 45%;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: linear-gradient(
+			to bottom,
+			$color-primary-1,
+			$color-primary-dark-1
+		);
+		clip-path: polygon(0 0, 100% 0, 100% 60%, 0 80%);
+		//z-index: 1;
+	}
+	&__button {
+		align-self: end; // align the button to the end of the section
+		margin-bottom: 2rem;
+		width: 20rem; // Change to flex-basis for responsive design!
+		height: 4rem;
+		background-color: $color-primary-1;
+		color: $color-white-1;
+		font-size: 2rem;
+		border: transparent;
+		outline: transparent;
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+		cursor: pointer;
+
+		// position: absolute;
+		// top: 50%;
+		// left: 45%;
 		//transform: translate(-50%, -50);
 	}
 }
@@ -179,6 +204,7 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 }
 .section-menu {
 	flex: 1; // takes up the remaining space
+	background-color: $color-gray-dark-1; // Testing purposes only
 }
 .footer {
 	background-color: $color-black-1;
@@ -208,6 +234,10 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	&__link:visited {
 		text-decoration: none;
 		color: $color-gray-dark-2;
+
+		&:hover {
+			color: $color-primary-1;
+		}
 	}
 	&__logo-box {
 	}
