@@ -4,7 +4,9 @@ $color-primary-dark-1: #801336;
 $color-white-1: #fff;
 
 $color-gray-light-1: #d9d9d9;
+
 $color-gray-dark-1: #404040; // not part of color palette!
+$color-gray-dark-2: #6a6d70;
 
 $color-black-1: #191e29; // color blackish blueish
 $color-black-2: #140b0e; // color blackish redish
@@ -19,9 +21,26 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 }
 .header {
 	background-color: $color-gray-light-1;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&__logo {
+		width: 8rem;
+		margin-left: 2rem;
+	}
+
+	&__title {
+		font-size: 5rem;
+		font-weight: bold;
+		margin-left: 5rem;
+		margin-right: auto;
+	}
 }
 
 .search {
+	margin-right: 45rem;
 	&__input {
 	}
 
@@ -31,8 +50,15 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 .user-nav {
 	&__user {
 	}
-	&__user-photo {
+	&__icon {
+		width: 8rem;
+		height: 8rem;
+		margin-right: 5rem;
+
+		// align-self: flex-end;
 	}
+	// &__user-photo {
+	// }
 }
 
 .content {
@@ -45,7 +71,8 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	flex: 0 0 17%;
 	display: flex;
 	flex-direction: column;
-	align-items: stretch;
+	justify-content: space-between;
+	//align-items: stretch;
 }
 
 .side-nav {
@@ -54,11 +81,12 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	list-style: none;
 
 	&__item {
-		color: $color-primary-1;
+		//color: $color-primary-1;
 		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		// display: flex;
+		// align-items: center;
+		// justify-content: center;
+		//cursor: pointer;
 
 		&:not(:last-child) {
 			margin-bottom: 1rem;
@@ -73,22 +101,42 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 		height: 100%;
 		width: 3px;
 		background-color: $color-primary-1;
+		transition: transform 0.2s, width 0.4s 0.2s, background-color 0.1s;
 	}
+
+	&__item:hover::before,
+	&__item--active::before {
+		color: $color-white-1;
+		transform: scaleY(
+			1
+		); // different from scale() which scales the entire element, scaleY only scales it on the Y-axis
+		width: 100%;
+	}
+	&__item:active::before {
+		background-color: var(--color-primary-light);
+	}
+
+	// &__item:hover + &__link {
+	// 	color: $color-white-1;
+	// }
 
 	&__link:link,
 	&__link:visited {
-		color: $color-primary-1;
+		//color: $color-gray-light-1;
+		color: $color-white-1;
 		text-decoration: none;
 		text-transform: uppercase;
 		padding: 1.5rem 3rem;
-		display: inline-block;
+		display: block;
 		position: relative;
+		z-index: 10;
 
 		display: flex;
 		align-items: center;
 	}
 
 	&__icon {
+		color: $color-white-1;
 		width: 4rem;
 		height: 4rem;
 		margin-right: 2rem;
@@ -104,10 +152,28 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	height: 60rem; // testing purposes only
 
 	flex: 1;
+	position: relative;
 }
 .section-hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
 	flex: 0 0 35rem;
 	margin-bottom: 2rem;
+
+	background: linear-gradient(
+		to bottom,
+		$color-primary-1,
+		$color-primary-dark-1
+	);
+	clip-path: polygon(0 0, 100% 0, 100% 60%, 0 80%);
+
+	&__button {
+		position: absolute;
+		top: 50%;
+		left: 45%;
+		//transform: translate(-50%, -50);
+	}
 }
 .section-info {
 }
@@ -141,7 +207,7 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	&__link:link,
 	&__link:visited {
 		text-decoration: none;
-		color: $color-gray-dark-1;
+		color: $color-gray-dark-2;
 	}
 	&__logo-box {
 	}

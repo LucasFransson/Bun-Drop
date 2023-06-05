@@ -5,7 +5,26 @@
   min-height: 60rem; }
 
 .header {
-  background-color: #d9d9d9; }
+  background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .header__logo {
+    width: 8rem;
+    margin-left: 2rem; }
+  .header__title {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-left: 5rem;
+    margin-right: auto; }
+
+.search {
+  margin-right: 45rem; }
+
+.user-nav__icon {
+  width: 8rem;
+  height: 8rem;
+  margin-right: 5rem; }
 
 .content {
   display: flex;
@@ -16,18 +35,14 @@
   flex: 0 0 17%;
   display: flex;
   flex-direction: column;
-  align-items: stretch; }
+  justify-content: space-between; }
 
 .side-nav {
   font-size: 1.7rem;
   margin-top: 4rem;
   list-style: none; }
   .side-nav__item {
-    color: #c72c41;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
+    position: relative; }
     .side-nav__item:not(:last-child) {
       margin-bottom: 1rem; }
   .side-nav__item::before {
@@ -37,17 +52,26 @@
     left: 0;
     height: 100%;
     width: 3px;
-    background-color: #c72c41; }
+    background-color: #c72c41;
+    transition: transform 0.2s, width 0.4s 0.2s, background-color 0.1s; }
+  .side-nav__item:hover::before, .side-nav__item--active::before {
+    color: #fff;
+    transform: scaleY(1);
+    width: 100%; }
+  .side-nav__item:active::before {
+    background-color: var(--color-primary-light); }
   .side-nav__link:link, .side-nav__link:visited {
-    color: #c72c41;
+    color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     padding: 1.5rem 3rem;
-    display: inline-block;
+    display: block;
     position: relative;
+    z-index: 10;
     display: flex;
     align-items: center; }
   .side-nav__icon {
+    color: #fff;
     width: 4rem;
     height: 4rem;
     margin-right: 2rem;
@@ -59,11 +83,21 @@
   padding: 2rem 0;
   background-color: #404040;
   height: 60rem;
-  flex: 1; }
+  flex: 1;
+  position: relative; }
 
 .section-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
   flex: 0 0 35rem;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  background: linear-gradient(to bottom, #c72c41, #801336);
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 0 80%); }
+  .section-hero__button {
+    position: absolute;
+    top: 50%;
+    left: 45%; }
 
 .section-menu {
   flex: 1; }
@@ -82,7 +116,7 @@
     list-style: none; }
   .footer__link:link, .footer__link:visited {
     text-decoration: none;
-    color: #404040; }
+    color: #6a6d70; }
   .footer__logo {
     width: 8rem;
     height: 8rem;

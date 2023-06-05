@@ -15,7 +15,8 @@
 		<div class="container">
 			<!-- header -->
 			<header class="header">
-				<img src="" alt="" class="logo" />
+				<img src="/public/images/logo black.png" alt="" class="header__logo" />
+				<h1 class="header__title">Bun Drop</h1>
 				<form action="#" class="search">
 					<input type="text" class="search__input" placeholder="Search" />
 					<button class="search__button">
@@ -27,7 +28,10 @@
 				<!-- header/user nav -->
 				<nav class="user-nav">
 					<div class="user-nav__user">
-						<img src="" alt="" class="user-nav__user-photo" />
+						<svg class="user-nav__icon">
+							<use xlink:href="/public/svg/sprite.svg#icon-user"></use>
+						</svg>
+						<!-- <img src="" alt="" class="user-nav__user-photo" /> -->
 					</div>
 				</nav>
 			</header>
@@ -38,29 +42,45 @@
 				<nav class="sidebar">
 					<ul class="side-nav">
 						<li class="side-nav__item">
-							<svg class="side-nav__icon">
-								<use xlink:href="/public/svg/sprite.svg#icon-spoon-knife"></use>
-							</svg>
-							<a href="" class="side-nav__link"> MENU </a>
+							<a href="" class="side-nav__link">
+								<svg class="side-nav__icon">
+									<use
+										xlink:href="/public/svg/sprite.svg#icon-spoon-knife"
+									></use>
+								</svg>
+								<span>MENU</span></a
+							>
 						</li>
 						<li class="side-nav__item">
-							<svg class="side-nav__icon">
-								<use xlink:href="/public/svg/sprite.svg#icon-spoon-knife"></use>
-							</svg>
-							<a href="" class="side-nav__link"> CART </a>
+							<a href="" class="side-nav__link">
+								<svg class="side-nav__icon">
+									<use
+										xlink:href="/public/svg/sprite.svg#icon-spoon-knife"
+									></use>
+								</svg>
+								<span>CART</span></a
+							>
 						</li>
 						<li class="side-nav__item">
-							<svg class="side-nav__icon">
-								<use xlink:href="/public/svg/sprite.svg#icon-spoon-knife"></use>
-							</svg>
-							<a href="" class="side-nav__link"> INFO </a>
+							<a href="" class="side-nav__link">
+								<svg class="side-nav__icon">
+									<use
+										xlink:href="/public/svg/sprite.svg#icon-spoon-knife"
+									></use>
+								</svg>
+								<span>INFO</span></a
+							>
 						</li>
 
 						<li class="side-nav__item">
-							<svg class="side-nav__icon">
-								<use xlink:href="/public/svg/sprite.svg#icon-spoon-knife"></use>
-							</svg>
-							<a href="" class="side-nav__link"> HOME </a>
+							<a href="" class="side-nav__link">
+								<svg class="side-nav__icon">
+									<use
+										xlink:href="/public/svg/sprite.svg#icon-spoon-knife"
+									></use>
+								</svg>
+								<span>HOME</span></a
+							>
 						</li>
 					</ul>
 				</nav>
@@ -68,7 +88,8 @@
 				<!-- main -->
 				<main class="main">
 					<!-- Section Hero -->
-					<section class="section-hero">Hero Section</section>
+					<section class="section-hero"></section>
+					<button class="section-hero__button">ORDER NOW</button>
 					<!--Section Info-->
 					<section class="section-info">Info Section</section>
 				</main>
