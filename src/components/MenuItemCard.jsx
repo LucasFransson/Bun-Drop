@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './button';
+import { Link } from 'react-router-dom';
 
 function Card(props) {
 	const handleAddToCart = () => {
@@ -24,11 +25,13 @@ function Card(props) {
 				{/* </div> */}
 
 				<div className="card__buttons">
-					<Button
-						text="More Info"
-						styleClass="card__buttons--info"
-						onClick={handleViewInfo}
-					/>
+					<Link to={`/menu/${props.id}`}>
+						<Button
+							text="More Info"
+							styleClass="card__buttons--info"
+							onClick={handleViewInfo}
+						/>
+					</Link>
 					<Button
 						text="Add To Cart"
 						styleClass="card__buttons--addCart"

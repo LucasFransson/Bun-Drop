@@ -16,7 +16,9 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 
 .container {
 	box-shadow: $--shadow-dark;
-	max-width: 150rem;
+	// max-width: 150rem;
+	max-width: 90vw;
+	max-height: 80vh;
 	margin: 10rem auto;
 	min-height: 60rem;
 }
@@ -65,6 +67,14 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 .content {
 	display: flex;
 	background-color: $color-white-1;
+	min-height: 70vh;
+}
+
+.content__menu {
+	// code for the grid displayed in some components with different url
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
 
 .sidebar {
@@ -159,8 +169,8 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	flex: 0 0 40rem;
-	width: 80rem; // change to flex-basis for responsive design
+	flex: 0 0 55rem;
+	width: 120rem; // change to flex-basis for responsive design
 	margin-bottom: 2rem;
 	border-bottom: 1px solid $color-black-1;
 	position: relative; // positioning for the pseudo-element background
@@ -193,13 +203,23 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 		outline: transparent;
 		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 		cursor: pointer;
+		text-decoration: none;
 
-		// position: absolute;
-		// top: 50%;
-		// left: 45%;
-		//transform: translate(-50%, -50);
+		// Necessary due to Link being an inline element by default
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:active {
+			background-color: $color-primary-light-1;
+		}
+
+		&:visited {
+			color: $color-white-1;
+		}
 	}
 }
+
 .section-info {
 }
 .section-menu {
@@ -285,13 +305,6 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 		font-weight: 800;
 		font-size: 3.2rem;
 	}
-	// &__text {
-	// 	&__category {
-	// 		align-self: flex-start;
-	// 	}
-	// 	&__description {
-	// 	}
-	// }
 
 	&__buttons {
 		display: flex;

@@ -1,20 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
-import Header from '../components/Header';
-import SideNav from '../components/SideNav';
-import Main from '../components/main';
-import Footer from '../components/Footer';
+
+import Main from '../components/Main';
+import Aside from '../components/Aside';
 
 function HomePage() {
-	<div className="container">
-		<Header />
-		<div className="content">
-			<SideNav />
+	// useLocation hook for checking if the url is menu or not, if it is then use the content__menu with a different flex-direction
+	const location = useLocation();
+	const isMenuPage = location.pathname === '/menu';
+	return (
+		<div className={`content ${isMenuPage ? 'content__menu' : ''}`}>
 			<Main />
+			<Aside />
 		</div>
-		<Footer />
-	</div>;
+	);
 }
 export default HomePage;
 
