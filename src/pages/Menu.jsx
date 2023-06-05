@@ -7,7 +7,6 @@ function Menu() {
 	const burgers = useFetch('http://localhost:7000/burgers', []);
 	return (
 		<>
-			Menu
 			<CardGrid items={burgers} Component={Card} linkPrefix="menu" />
 		</>
 	);

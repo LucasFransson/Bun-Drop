@@ -18,10 +18,10 @@ function Card(props) {
 			<div className="card">
 				<h1 className="card__title">{props.name}</h1>
 				<img src={imageSrc} alt={props.name} className="card__image" />
-				<div className="card__text">
-					<p className="card__text--category">{props.category}</p>
-					<p className="card__text--price">{props.price} $</p>
-				</div>
+				{/* <div className="card__text"> */}
+				<p className="card__category">{props.category}</p>
+				<p className="card__price">{props.price} $</p>
+				{/* </div> */}
 
 				<div className="card__buttons">
 					<Button
