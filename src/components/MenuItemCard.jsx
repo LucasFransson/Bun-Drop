@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Button from './button';
 import { Link } from 'react-router-dom';
 
+import { CartContext } from '../utils/CartContext';
+import { addToCart } from '../utils/cartService';
+
 function Card(props) {
+	// const handleAddToCart = () => {
+	// 	console.log('Add to cart clicked!');
+	// };
+
 	const handleAddToCart = () => {
-		console.log('Add to cart clicked!');
+		const itemWithQuantity = { ...props, quantity };
+
+		addToCart(itemWithQuantity);
+
+		setCart((prevCart) => [...prevCart, itemWithQuantity]);
 	};
 
 	const handleViewInfo = () => {
 		console.log('View info clicked!');
 	};
+
+	// Cart
+	const { setCart } = useContext(CartContext);
+	const [quantity, setQuantity] = useState(1);
 
 	// Conditionally set the image source: if props.image is not provided, use a default image URL.
 	const imageSrc = props.image || './images/logo black.png';
