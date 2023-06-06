@@ -14,17 +14,17 @@ function ProductPage() {
 	const { setCart } = useContext(CartContext);
 	const [quantity, setQuantity] = useState(1);
 
+	// const handleAddToCart = () => {
+	// 	const itemWithQuantity = { ...burger, quantity };
+
+	// 	addToCart(itemWithQuantity);
+	// 	setCart((prevCart) => [...prevCart, itemWithQuantity]);
+	// };
+
 	const handleAddToCart = () => {
-		const itemWithQuantity = { ...burger, quantity };
-
-		addToCart(itemWithQuantity);
-		setCart((prevCart) => [...prevCart, itemWithQuantity]);
-	};
-
-	const handleRemoveFromCart = (id) => {
-		const filteredCart = cart.filter((item) => item.id !== id);
-
-		setCart(filteredCart);
+		const itemWithQuantity = { ...burger, quantity: Number(quantity) }; // Convert quantity to a number
+		const updatedCart = addToCart(itemWithQuantity);
+		setCart(updatedCart);
 	};
 
 	return (

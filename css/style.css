@@ -199,9 +199,10 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center; }
+  .card__title {
+    padding-top: 2rem; }
   .card__image {
-    width: 8rem;
-    height: 8rem; }
+    height: 20rem; }
   .card__category {
     align-self: flex-start;
     margin-left: 4rem; }
@@ -211,9 +212,11 @@
   .card__buttons {
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    padding-bottom: 3rem; }
     .card__buttons--info {
       margin-bottom: 2rem;
+      font-size: 2rem;
       background-color: transparent;
       color: #c72c41;
       outline: transparent;
@@ -225,6 +228,19 @@
       background-color: #c72c41;
       color: #fff;
       cursor: pointer; }
+
+.info {
+  font-size: 1.8rem;
+  padding: 2rem; }
+  .info__title {
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase; }
+  .info__heading {
+    font-size: 2.2rem; }
+  .info__paragraph:not(:last-child) {
+    margin-bottom: 2.5rem; }
 
 *,
 *::before,

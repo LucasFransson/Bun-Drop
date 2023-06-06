@@ -11,11 +11,9 @@ function Card(props) {
 	// };
 
 	const handleAddToCart = () => {
-		const itemWithQuantity = { ...props, quantity };
-
-		addToCart(itemWithQuantity);
-
-		setCart((prevCart) => [...prevCart, itemWithQuantity]);
+		const itemWithQuantity = { ...props, quantity: 1 };
+		const updatedCart = addToCart(itemWithQuantity);
+		setCart(updatedCart);
 	};
 
 	const handleViewInfo = () => {
@@ -26,7 +24,7 @@ function Card(props) {
 	const { setCart } = useContext(CartContext);
 	const [quantity, setQuantity] = useState(1);
 
-	// Conditionally set the image source: if props.image is not provided, use a default image URL.
+	// Conditionally set the image source, if props.image is not provided > use a default image URL
 	const imageSrc = props.image || './images/logo black.png';
 
 	return (

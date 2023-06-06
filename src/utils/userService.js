@@ -61,10 +61,10 @@ export async function addFavorite(userId, item) {
 	}
 }
 
-export function logOutUser(username) {
+export function logOutUser() {
 	localStorage.removeItem('username');
 	localStorage.removeItem('password');
-	window.location.href = 'index.html'; // Redirect to index.html I hope, test functionallity
+	window.location.href = '/'; // Redirect to home I hope, test functionallity
 }
 
 export function logInUser(username, password) {

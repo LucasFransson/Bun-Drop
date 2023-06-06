@@ -1,6 +1,11 @@
 import React from 'react';
+import { ReactComponent as UserIcon } from '/public/svg/SVG/user.svg';
+import { logOutUser } from '../utils/userService';
 
 function Header() {
+	const handleLogOut = () => {
+		logOutUser();
+	};
 	return (
 		<header className="header">
 			<img
@@ -15,10 +20,11 @@ function Header() {
 			</form>
 			<nav className="user-nav">
 				<div className="user-nav__user">
-					<svg className="user-nav__icon">
-						<use xlink:href="/public/svg/sprite.svg#icon-user"></use>
-					</svg>
+					<UserIcon className="user-nav__icon" />
 				</div>
+				<button className="user-nav__logout" onClick={handleLogOut}>
+					Logout
+				</button>
 			</nav>
 		</header>
 	);

@@ -3,7 +3,7 @@
 		{
 			"id": 1,
 			"name": "Classic Beef Burger",
-			"image": "",
+			"image": "/public/images/burger3.png",
 			"category": "Meat",
 			"price": 10.99,
 			"description": "A timeless classic with our special seasoning.",
@@ -25,7 +25,7 @@
 		{
 			"id": 2,
 			"name": "Chicken Delight",
-			"image": "",
+			"image": "/public/images/burger2.png",
 			"category": "Poultry",
 			"price": 9.99,
 			"description": "Juicy grilled chicken for a lighter touch.",
@@ -47,7 +47,7 @@
 		{
 			"id": 3,
 			"name": "Spicy Bean Burger",
-			"image": "",
+			"image": "/public/images/burger4.png",
 			"category": "Vegan",
 			"price": 11.49,
 			"description": "A fiery explosion of taste with wholesome beans.",
@@ -69,7 +69,7 @@
 		{
 			"id": 4,
 			"name": "Veggie Supreme",
-			"image": "",
+			"image": "/public/images/burger7.png",
 			"category": "Vegetarian",
 			"price": 10.49,
 			"description": "An array of fresh veggies packed into a delicious burger.",
@@ -91,7 +91,7 @@
 		{
 			"id": 5,
 			"name": "Cheese Lovers",
-			"image": "",
+			"image": "/public/images/burger1.png",
 			"category": "Meat",
 			"price": 11.99,
 			"description": "Loaded with an extra portion of cheese for the cheese fanatics.",
@@ -113,7 +113,7 @@
 		{
 			"id": 6,
 			"name": "BBQ Bacon Burger",
-			"image": "",
+			"image": "/public/images/burger5.png",
 			"category": "Meat",
 			"price": 12.99,
 			"description": "A tangy BBQ burger topped with crispy bacon.",
