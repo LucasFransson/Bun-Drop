@@ -15,7 +15,7 @@ function Main() {
 					></img>
 				</div>
 
-				<Link to={`/menu/2`} className="section-hero__button">
+				<Link to={`/menu/1`} className="section-hero__button">
 					<span className="section-hero__button-text">ORDER NOW</span>
 				</Link>
 			</section>

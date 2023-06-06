@@ -27,3 +27,28 @@ export function removeFromCart(itemId) {
 export function clearCart() {
 	localStorage.removeItem('cart');
 }
+
+// export function removeFromCart(itemId) {
+// 	const cart = getCart();
+// 	const itemIndex = cart.findIndex((item) => item.id === itemId);
+// 	if (itemIndex !== -1) {
+// 		cart[itemIndex].quantity -= 1;
+// 		if (cart[itemIndex].quantity === 0) {
+// 			cart.splice(itemIndex, 1);
+// 		}
+// 	}
+// 	localStorage.setItem('cart', JSON.stringify(cart));
+// }
+
+// export function addToCart(item) {
+// 	const cart = getCart();
+// 	const existingItemIndex = cart.findIndex(
+// 		(cartItem) => cartItem.id === item.id
+// 	);
+// 	if (existingItemIndex !== -1) {
+// 		cart[existingItemIndex].quantity += 1;
+// 	} else {
+// 		cart.push({ ...item, quantity: 1 });
+// 	}
+// 	localStorage.setItem('cart', JSON.stringify(cart));
+// }

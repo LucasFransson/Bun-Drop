@@ -18,7 +18,6 @@ function ProductPage() {
 		const itemWithQuantity = { ...burger, quantity };
 
 		addToCart(itemWithQuantity);
-
 		setCart((prevCart) => [...prevCart, itemWithQuantity]);
 	};
 

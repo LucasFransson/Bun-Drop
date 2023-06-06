@@ -11,7 +11,6 @@ function Product({ item }) {
 		const itemWithQuantity = { ...item, quantity };
 
 		addToCart(itemWithQuantity);
-
 		setCart((prevCart) => [...prevCart, itemWithQuantity]);
 	};
 

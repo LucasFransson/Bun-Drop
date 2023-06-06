@@ -44,7 +44,7 @@ export async function getUserId(username) {
 export async function addFavorite(userId, item) {
 	const response = await fetch(`http://localhost:7000/users/${userId}`);
 	const user = await response.json();
-	console.log(item);
+
 	const foundProduct = user.favorites.find((product) => product === item); // SHOULD BE ITEM.ID AND PRODUCT.ID, THIS IS WRONG BECAUSE THE REST OF THE CODE IS WRONG FIX THIS
 	if (!foundProduct) {
 		user.favorites.push(item);
