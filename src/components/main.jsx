@@ -19,7 +19,18 @@ function Main() {
 					<span className="section-hero__button-text">ORDER NOW</span>
 				</Link>
 			</section>
-			<section className="section-info">Info Section</section>
+			<section className="section-info">
+				<img
+					src={'/public/images/drone.png'}
+					className="section-info__photo"
+				></img>
+				<div className="section-info__text-button-container">
+					<h2 className="section-info__title">Delievery By Drone</h2>
+					<button className="section-info__button">
+						<span className="section-info__button-text">Read More</span>
+					</button>
+				</div>
+			</section>
 		</main>
 	);
 }

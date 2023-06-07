@@ -38,16 +38,70 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 		font-size: 5rem;
 		font-weight: bold;
 		margin-left: 5rem;
-		margin-right: auto;
 	}
 }
 
+// .search {
+// 	margin-right: 45rem;
+// 	&__input {
+// 	}
+
+// 	&__button {
+// 	}
+// }
 .search {
-	margin-right: 45rem;
+	flex: 0 0 40%; // no grow, no shrink, take up 40 % width of total headers width
+	display: flex; // set to flex for aligning child components
+	align-items: center; // center
+	justify-content: center; // center
+	margin-right: 30rem;
+	// margin-right: auto;
 	&__input {
+		font-family: inherit; // Since input types doesnt inherit font properties, explicitly set them to inherit
+		font-size: inherit;
+		color: inherit;
+		background-color: $color-gray-light-1;
+		border: none;
+		padding: 0.7rem 2rem;
+		border-radius: 100px;
+		width: 90%; // Set to 90 % width of available space to allow searchbar to grow on focus
+		margin-right: -3.5rem;
+		transition: all 0.2s;
+
+		&:focus {
+			outline: none;
+			width: 100%; // grow from 90 to 100% on focus
+			background-color: $color-gray-light-1;
+		}
+
+		&::placeholder {
+			font-weight: 100;
+
+			color: $color-gray-dark-1;
+		}
+	}
+
+	// When input is focused, select the sibling component button and give it same bck-clr as input
+	&__input:focus + &__button {
+		background-color: $color-gray-light-1;
 	}
 
 	&__button {
+		border: none;
+		background-color: $color-gray-light-1;
+
+		&:focus {
+			outline: none;
+		}
+		&:active {
+			transform: translateY(2px);
+		}
+	}
+
+	&__icon {
+		height: 2rem;
+		width: 2rem;
+		fill: $color-gray-dark-1; // Change Color of SVG
 	}
 }
 .user-nav {
@@ -160,19 +214,22 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	flex-direction: column;
 	padding: 2rem 0;
 	background-color: $color-gray-light-1;
-	height: 60rem; // testing purposes only
+	//height: 60rem; // testing purposes only
 
-	flex: 1;
+	flex: 7; // 70 % of the content
 	position: relative;
 }
 .section-hero {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	flex: 0 0 55rem;
-	width: 120rem; // change to flex-basis for responsive design
+	//flex-grow: 0;
+	//flex: 0 0 55rem 120rem;
+	//width: 120rem; // change to flex-basis for responsive design
 	margin-bottom: 2rem;
-	border-bottom: 1px solid $color-black-1;
+	//border-bottom: 1px solid $color-black-1;
+	border-bottom: 1.5rem solid $color-primary-dark-1;
+	border-right: 1.5rem solid $color-primary-dark-1;
 	position: relative; // positioning for the pseudo-element background
 
 	&::before {
@@ -191,6 +248,18 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 		clip-path: polygon(0 0, 100% 0, 100% 60%, 0 80%);
 		z-index: 0;
 	}
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 75%;
+		background: $color-black-2;
+		z-index: 0;
+	}
+
+	// &__content {
 
 	&__content {
 		margin-top: 5rem;
@@ -200,6 +269,19 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 		flex-wrap: wrap;
 		justify-content: flex-end;
 		margin-left: 20rem;
+		position: relative;
+		// height: 100%;
+
+		// &::before {
+		// 	content: '';
+		// 	position: absolute;
+		// 	top: 0;
+		// 	right: -30%;
+		// 	bottom: 0;
+		// 	left: 70%;
+		// 	background: $color-black-1;
+		// 	z-index: 1;
+		// }
 	}
 	&__title {
 		color: $color-white-1;
@@ -218,23 +300,27 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 
 	&__image {
 		//justify-self: flex-end;
-		margin-right: 5rem;
+		margin-right: -10rem;
 		z-index: 10;
-		width: 40%;
-
+		width: 25rem;
+		margin-top: -2rem;
 		// margin-top: 7rem;
+		border: 1.5rem solid $color-primary-1;
 
-		border: 1.5rem solid $color-primary-dark-1;
+		position: relative;
 	}
+
 	&__button {
-		align-self: center;
-		margin-top: 3rem;
-		margin-bottom: 2rem;
+		align-self: center; // FIX FLEXBOX IN MAIN SO THIS BUTTON IS ALLIGNED WITH THE CONTENT OF THIS COMPONENT
+		margin-right: 7rem;
+		// margin-top: 3rem;
+		margin-bottom: 3rem;
+
 		width: 20rem; // Change to flex-basis for responsive design!
-		height: 4rem;
+		height: 6rem;
 		background-color: $color-primary-1;
 		color: $color-white-1;
-		font-size: 2rem;
+		font-size: 2.5rem;
 		border: transparent;
 		outline: transparent;
 		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
@@ -257,14 +343,63 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 }
 
 .section-info {
+	box-sizing: content-box;
+	//flex-grow: 1;
+	// background-image: url(/public/images/drone.png);
+	// background-size: cover;
+	// background-repeat: no-repeat;
+	// background-position: 80%;
+	// height: 100%;
+
+	display: flex;
+	align-items: center;
+
+	background-color: $color-white-1;
+	margin-top: -2rem;
+	margin-bottom: -2rem;
+	height: 20rem;
+	// background-color: $color-primary-dark-1;
+	border-bottom: 1.5rem solid $color-primary-dark-1;
+
+	&__photo {
+		height: 100%;
+	}
+
+	&__text-button-container {
+		display: flex;
+		flex-direction: column;
+	}
+	&__title {
+		font-size: 3rem;
+		font-weight: 500;
+		letter-spacing: 3.5px;
+		text-transform: uppercase;
+	}
+
+	&__button {
+		align-self: center;
+		margin-top: 2rem;
+		width: 70%;
+		background-color: $color-primary-1;
+		color: $color-white-1;
+		font-size: 2.5rem;
+		border: transparent;
+		outline: transparent;
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+		cursor: pointer;
+
+		&:active {
+			background-color: $color-primary-light-1;
+		}
+	}
 }
 .section-menu {
-	flex: 1; // takes up the remaining space
-	background-color: $color-gray-dark-1; // Testing purposes only
+	flex: 3; // 30 % of the content
+	background-color: $color-gray-light-1; // Testing purposes only
 }
 .footer {
 	background-color: $color-black-1;
-	border-top: 1px solid $color-gray-dark-1;
+	// border-top: 1px solid $color-gray-dark-1;
 	height: 12rem; // testing purposes only
 
 	display: flex;
@@ -386,4 +521,44 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	&__paragraph:not(:last-child) {
 		margin-bottom: 2.5rem;
 	}
+}
+
+.product {
+	// display: flex;
+	// flex-direction: row;
+	// flex-wrap: wrap;
+	// // align-items: center;
+
+	// &__title {
+	// 	width: 100%;
+	// }
+	// &__image {
+	// 	flex: 1;
+	// }
+	// &__category {
+	// 	width: 100%;
+	// }
+	// &__price {
+	// 	font-size: 3rem;
+	// 	width: 100%;
+	// }
+	// &__description {
+	// 	border-bottom: 2px solid $color-primary-1;
+	// 	width: 100%;
+	// }
+
+	// &__ingredients {
+	// 	display: flex;
+	// 	flex-direction: column;
+
+	// 	list-style: none;
+	// 	font-size: 3rem;
+	// 	&__item {
+	// 		font-size: 2rem;
+	// 	}
+	// }
+}
+.ingredients {
+	display: flex;
+	flex-direction: column;
 }

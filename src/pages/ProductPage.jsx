@@ -30,35 +30,49 @@ function ProductPage() {
 	return (
 		<>
 			<div className="product">
-				<h2>{burger.name}</h2>
-				<img src={burger.image} alt={burger.name} />
-				<p>Category: {burger.category}</p>
-				<p>Price: ${burger.price}</p>
-				<p>Description: {burger.description}</p>
-				{burger.ingredients ? (
-					<ul>
-						<li>Ingredients:</li>
-						{burger.ingredients.map((ingredient, index) => (
-							<li key={index}>{ingredient}</li>
-						))}
-					</ul>
-				) : (
-					<p>Ingredients not found</p>
-				)}
+				<h2 className="product__title">{burger.name}</h2>
+				<img src={burger.image} alt={burger.name} className="product__image" />
+				<p className="product__category">Category: {burger.category}</p>
+				<p className="product__price">Price: ${burger.price}</p>
+				<p className="product__description">
+					Description: {burger.description}
+				</p>
 				<div>
-					{burger.nutrients ? (
-						<>
-							<h3>Nutrients:</h3>
-							<p>Calories: {burger.nutrients.calories}</p>
-							<p>Protein: {burger.nutrients.protein}g</p>
-							<p>Carbs: {burger.nutrients.carbs}g</p>
-							<p>Fat: {burger.nutrients.fat}g</p>
-						</>
-					) : (
-						<p>Nutrients not found</p>
-					)}
-				</div>
+					<div className="ingredients">
+						{burger.ingredients ? (
+							<ul className="product__ingredients">
+								<li>Ingredients:</li>
+								{burger.ingredients.map((ingredient, index) => (
+									<li key={index} className="product__ingredients__item">
+										{ingredient}
+									</li>
+								))}
+							</ul>
+						) : (
+							<p>Ingredients not found</p>
+						)}
 
+						{burger.nutrients ? (
+							<>
+								<h3>Nutrients:</h3>
+								<p className="product__ingredients__item">
+									Calories: {burger.nutrients.calories}
+								</p>
+								<p className="product__ingredients__item">
+									Protein: {burger.nutrients.protein}g
+								</p>
+								<p className="product__ingredients__item">
+									Carbs: {burger.nutrients.carbs}g
+								</p>
+								<p className="product__ingredients__item">
+									Fat: {burger.nutrients.fat}g
+								</p>
+							</>
+						) : (
+							<p>Nutrients not found</p>
+						)}
+					</div>
+				</div>
 				<label>
 					Quantity:
 					<input

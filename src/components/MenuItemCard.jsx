@@ -24,7 +24,7 @@ function Card(props) {
 	const { setCart } = useContext(CartContext);
 	const [quantity, setQuantity] = useState(1);
 
-	// Conditionally set the image source, if props.image is not provided > use a default image URL
+	// conditionally set the image source, if props.image is not provided  use a default image URL
 	const imageSrc = props.image || './images/logo black.png';
 
 	return (

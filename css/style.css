@@ -17,11 +17,45 @@
   .header__title {
     font-size: 5rem;
     font-weight: bold;
-    margin-left: 5rem;
-    margin-right: auto; }
+    margin-left: 5rem; }
 
 .search {
-  margin-right: 45rem; }
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30rem; }
+  .search__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: #d9d9d9;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    margin-right: -3.5rem;
+    transition: all 0.2s; }
+    .search__input:focus {
+      outline: none;
+      width: 100%;
+      background-color: #d9d9d9; }
+    .search__input::placeholder {
+      font-weight: 100;
+      color: #404040; }
+  .search__input:focus + .search__button {
+    background-color: #d9d9d9; }
+  .search__button {
+    border: none;
+    background-color: #d9d9d9; }
+    .search__button:focus {
+      outline: none; }
+    .search__button:active {
+      transform: translateY(2px); }
+  .search__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: #404040; }
 
 .user-nav__icon {
   width: 8rem;
@@ -90,18 +124,16 @@
   flex-direction: column;
   padding: 2rem 0;
   background-color: #d9d9d9;
-  height: 60rem;
-  flex: 1;
+  flex: 7;
   position: relative; }
 
 .section-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 0 0 55rem;
-  width: 120rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid #191e29;
+  border-bottom: 1.5rem solid #801336;
+  border-right: 1.5rem solid #801336;
   position: relative; }
   .section-hero::before {
     content: '';
@@ -113,6 +145,15 @@
     background: linear-gradient(to bottom, #c72c41, #801336);
     clip-path: polygon(0 0, 100% 0, 100% 60%, 0 80%);
     z-index: 0; }
+  .section-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 75%;
+    background: #140b0e;
+    z-index: 0; }
   .section-hero__content {
     margin-top: 5rem;
     margin-right: 20rem;
@@ -120,7 +161,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
-    margin-left: 20rem; }
+    margin-left: 20rem;
+    position: relative; }
   .section-hero__title {
     color: #fff;
     z-index: 1;
@@ -131,19 +173,21 @@
     z-index: 1;
     width: 100%; }
   .section-hero__image {
-    margin-right: 5rem;
+    margin-right: -10rem;
     z-index: 10;
-    width: 40%;
-    border: 1.5rem solid #801336; }
+    width: 25rem;
+    margin-top: -2rem;
+    border: 1.5rem solid #c72c41;
+    position: relative; }
   .section-hero__button {
     align-self: center;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-right: 7rem;
+    margin-bottom: 3rem;
     width: 20rem;
-    height: 4rem;
+    height: 6rem;
     background-color: #c72c41;
     color: #fff;
-    font-size: 2rem;
+    font-size: 2.5rem;
     border: transparent;
     outline: transparent;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
@@ -157,13 +201,45 @@
     .section-hero__button:visited {
       color: #fff; }
 
+.section-info {
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  margin-top: -2rem;
+  margin-bottom: -2rem;
+  height: 20rem;
+  border-bottom: 1.5rem solid #801336; }
+  .section-info__photo {
+    height: 100%; }
+  .section-info__text-button-container {
+    display: flex;
+    flex-direction: column; }
+  .section-info__title {
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 3.5px;
+    text-transform: uppercase; }
+  .section-info__button {
+    align-self: center;
+    margin-top: 2rem;
+    width: 70%;
+    background-color: #c72c41;
+    color: #fff;
+    font-size: 2.5rem;
+    border: transparent;
+    outline: transparent;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    cursor: pointer; }
+    .section-info__button:active {
+      background-color: #db3d52; }
+
 .section-menu {
-  flex: 1;
-  background-color: #404040; }
+  flex: 3;
+  background-color: #d9d9d9; }
 
 .footer {
   background-color: #191e29;
-  border-top: 1px solid #404040;
   height: 12rem;
   display: flex;
   flex-direction: column;
@@ -241,6 +317,10 @@
     font-size: 2.2rem; }
   .info__paragraph:not(:last-child) {
     margin-bottom: 2.5rem; }
+
+.ingredients {
+  display: flex;
+  flex-direction: column; }
 
 *,
 *::before,
