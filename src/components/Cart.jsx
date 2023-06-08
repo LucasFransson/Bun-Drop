@@ -33,32 +33,47 @@ function Cart() {
 
 	const totalPrice = getTotalPrice();
 	return (
-		<div>
-			<h2>Your Cart</h2>
-			<ul>
-				{cart.map((item) => (
-					<li key={item.id}>
-						{item.name} - ${item.price} x {item.quantity} = $
-						{item.price * item.quantity}
-						<button onClick={() => handleRemoveFromCart(item.id)}>
-							Remove from cart
-						</button>
-						<Button
-							text="+"
-							onClick={() => handleIncreaseQuantity(item)}
-							styleClass="btn btn__quantity--increase"
-						></Button>
-						<Button
-							text="-"
-							onClick={() => handleDecreaseQuantity(item)}
-							styleClass="btn btn__decrease-quantity"
-							disabled={item.quantity <= 0}
-						></Button>
-					</li>
-				))}
-			</ul>
-			{/* <h3>Total: ${totalPrice}</h3> */}
-			<h3>Total: {cart.length > 0 ? `$${totalPrice}` : 'Cart is empty'}</h3>
+		<div className="cart">
+			<div className="cart__left-container">
+				<h2 className="cart__heading">CART</h2>
+				<ul className="cart-list">
+					{cart.map((item) => (
+						<li key={item.id} className="cart-list__item">
+							{item.name} - ${item.price} x {item.quantity} = $
+							{item.price * item.quantity}
+							<button
+								onClick={() => handleRemoveFromCart(item.id)}
+								className="cart-list__item--btn-remove"
+							>
+								Remove from cart
+							</button>
+							<Button
+								text="+"
+								onClick={() => handleIncreaseQuantity(item)}
+								styleClass="btn btn__quantity--increase"
+							></Button>
+							<Button
+								text="-"
+								onClick={() => handleDecreaseQuantity(item)}
+								styleClass="btn btn__decrease-quantity"
+								disabled={item.quantity <= 0}
+							></Button>
+						</li>
+					))}
+				</ul>
+			</div>
+			<div className="cart__right-container">
+				{/* <h3>Total: ${totalPrice}</h3> */}
+				<h2 className="cart-total__heading">
+					Total: {cart.length > 0 ? `$${totalPrice}` : 'Cart is empty'}
+				</h2>
+				<button
+					className="cart-total__button-confirm"
+					disabled={cart.length <= 0}
+				>
+					CONFIRM
+				</button>
+			</div>
 		</div>
 	);
 }

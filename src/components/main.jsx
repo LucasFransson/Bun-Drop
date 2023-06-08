@@ -26,9 +26,11 @@ function Main() {
 				></img>
 				<div className="section-info__text-button-container">
 					<h2 className="section-info__title">Delievery By Drone</h2>
+					{/* <Link to={`/info`} className="section-info__button"> */}
 					<button className="section-info__button">
 						<span className="section-info__button-text">Read More</span>
 					</button>
+					{/* </Link> */}
 				</div>
 			</section>
 		</main>

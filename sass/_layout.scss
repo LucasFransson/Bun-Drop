@@ -35,26 +35,75 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	}
 
 	&__title {
-		font-size: 5rem;
+		font-size: 4rem;
 		font-weight: bold;
 		margin-left: 5rem;
+		text-transform: uppercase;
+		letter-spacing: 0.7rem;
+		margin-right: auto;
 	}
 }
-
-// .search {
-// 	margin-right: 45rem;
+// THIS IS MEANT FOR A SEARCHBAR IN THE HEADER USING CONTEXT TO AUTOMATICALLY REDIRECT THE USER TO THE MENU
+// .header-search {
+// 	flex: 0 0 40%; // no grow, no shrink, take up 40 % width of total headers width
+// 	display: flex; // set to flex for aligning child components
+// 	align-items: center; // center
+// 	justify-content: center; // center
+// 	margin-right: 30rem;
+// 	// margin-right: auto;
 // 	&__input {
+// 		font-family: inherit; // Since input types doesnt inherit font properties, explicitly set them to inherit
+// 		font-size: inherit;
+// 		color: inherit;
+// 		background-color: $color-gray-light-1;
+// 		border: none;
+// 		padding: 0.7rem 2rem;
+// 		border-radius: 100px;
+// 		width: 90%; // Set to 90 % width of available space to allow searchbar to grow on focus
+// 		margin-right: -3.5rem;
+// 		transition: all 0.2s;
+
+// 		&:focus {
+// 			outline: none;
+// 			width: 100%; // grow from 90 to 100% on focus
+// 			background-color: $color-gray-light-1;
+// 		}
+
+// 		&::placeholder {
+// 			font-weight: 100;
+
+// 			color: $color-gray-dark-1;
+// 		}
+// 	}
+
+// 	// When input is focused, select the sibling component button and give it same bck-clr as input
+// 	&__input:focus + &__button {
+// 		background-color: $color-gray-light-1;
 // 	}
 
 // 	&__button {
+// 		border: none;
+// 		background-color: $color-gray-light-1;
+
+// 		&:focus {
+// 			outline: none;
+// 		}
+// 		&:active {
+// 			transform: translateY(2px);
+// 		}
+// 	}
+
+// 	&__icon {
+// 		height: 2rem;
+// 		width: 2rem;
+// 		fill: $color-gray-dark-1; // Change Color of SVG
 // 	}
 // }
 .search {
-	flex: 0 0 40%; // no grow, no shrink, take up 40 % width of total headers width
 	display: flex; // set to flex for aligning child components
 	align-items: center; // center
 	justify-content: center; // center
-	margin-right: 30rem;
+	margin-top: 5rem;
 	// margin-right: auto;
 	&__input {
 		font-family: inherit; // Since input types doesnt inherit font properties, explicitly set them to inherit
@@ -64,13 +113,13 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 		border: none;
 		padding: 0.7rem 2rem;
 		border-radius: 100px;
-		width: 90%; // Set to 90 % width of available space to allow searchbar to grow on focus
+		width: 30%; // Set to 30 % width of available space to allow searchbar to grow on focus
 		margin-right: -3.5rem;
 		transition: all 0.2s;
 
 		&:focus {
 			outline: none;
-			width: 100%; // grow from 90 to 100% on focus
+			width: 50%; // grow from 30 to 50% on focus
 			background-color: $color-gray-light-1;
 		}
 
@@ -111,8 +160,6 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 		width: 8rem;
 		height: 8rem;
 		margin-right: 5rem;
-
-		// align-self: flex-end;
 	}
 	// &__user-photo {
 	// }
@@ -146,12 +193,7 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	list-style: none;
 
 	&__item {
-		//color: $color-primary-1;
 		position: relative;
-		// display: flex;
-		// align-items: center;
-		// justify-content: center;
-		//cursor: pointer;
 
 		&:not(:last-child) {
 			margin-bottom: 1rem;
@@ -180,11 +222,6 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	&__item:active::before {
 		background-color: $color-primary-light-1;
 	}
-
-	// &__item:hover + &__link {
-	// 	color: $color-white-1;
-	// }
-
 	&__link:link,
 	&__link:visited {
 		//color: $color-gray-light-1;
@@ -214,8 +251,8 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	flex-direction: column;
 	padding: 2rem 0;
 	background-color: $color-gray-light-1;
-	//height: 60rem; // testing purposes only
-
+	height: 100%;
+	// width: 100%;
 	flex: 7; // 70 % of the content
 	position: relative;
 }
@@ -223,11 +260,8 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	//flex-grow: 0;
-	//flex: 0 0 55rem 120rem;
-	//width: 120rem; // change to flex-basis for responsive design
+	flex: 7;
 	margin-bottom: 2rem;
-	//border-bottom: 1px solid $color-black-1;
 	border-bottom: 1.5rem solid $color-primary-dark-1;
 	border-right: 1.5rem solid $color-primary-dark-1;
 	position: relative; // positioning for the pseudo-element background
@@ -268,26 +302,16 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: flex-end;
-		margin-left: 20rem;
-		position: relative;
-		// height: 100%;
+		margin-left: 7rem;
 
-		// &::before {
-		// 	content: '';
-		// 	position: absolute;
-		// 	top: 0;
-		// 	right: -30%;
-		// 	bottom: 0;
-		// 	left: 70%;
-		// 	background: $color-black-1;
-		// 	z-index: 1;
-		// }
+		position: relative;
 	}
 	&__title {
 		color: $color-white-1;
+		text-transform: uppercase;
+		letter-spacing: 0.7rem;
 		z-index: 1;
-		// align-self: flex-start;
-		font-size: 4.4rem;
+		font-size: 4rem;
 		width: 100%;
 	}
 
@@ -295,16 +319,13 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 		color: $color-white-1;
 		z-index: 1;
 		width: 100%;
-		// justify-self: flex-end;
 	}
 
 	&__image {
-		//justify-self: flex-end;
 		margin-right: -10rem;
 		z-index: 10;
 		width: 25rem;
 		margin-top: -2rem;
-		// margin-top: 7rem;
 		border: 1.5rem solid $color-primary-1;
 
 		position: relative;
@@ -313,7 +334,6 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	&__button {
 		align-self: center; // FIX FLEXBOX IN MAIN SO THIS BUTTON IS ALLIGNED WITH THE CONTENT OF THIS COMPONENT
 		margin-right: 7rem;
-		// margin-top: 3rem;
 		margin-bottom: 3rem;
 
 		width: 20rem; // Change to flex-basis for responsive design!
@@ -326,6 +346,7 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 		cursor: pointer;
 		text-decoration: none;
+		z-index: 10;
 
 		// Necessary due to Link being an inline element by default
 		display: flex;
@@ -343,29 +364,28 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 }
 
 .section-info {
-	box-sizing: content-box;
-	//flex-grow: 1;
-	// background-image: url(/public/images/drone.png);
-	// background-size: cover;
-	// background-repeat: no-repeat;
-	// background-position: 80%;
-	// height: 100%;
-
+	flex: 3;
 	display: flex;
 	align-items: center;
-
 	background-color: $color-white-1;
 	margin-top: -2rem;
 	margin-bottom: -2rem;
-	height: 20rem;
-	// background-color: $color-primary-dark-1;
+	// height: 20rem;
 	border-bottom: 1.5rem solid $color-primary-dark-1;
 
 	&__photo {
-		height: 100%;
+		max-width: 40rem;
+		max-width: 40rem;
+		// max-width: 100%;
+		// max-width: 100%;
+		// min-height: 50%;
+		// min-width: 50%;
+
+		// object-fit: cover;
 	}
 
 	&__text-button-container {
+		margin-left: 3rem;
 		display: flex;
 		flex-direction: column;
 	}
@@ -393,9 +413,71 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 		}
 	}
 }
-.section-menu {
+.section-aside {
 	flex: 3; // 30 % of the content
 	background-color: $color-gray-light-1; // Testing purposes only
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-bottom: 1.5rem solid $color-primary-dark-1;
+	align-items: end;
+	height: 100%;
+
+	&__photo {
+		width: 25rem;
+
+		&--1 {
+			width: 37.5rem;
+		}
+		&--2 {
+			object-fit: cover;
+		}
+
+		&--3 {
+			width: 37.5rem;
+		}
+	}
+	&__first-div {
+	}
+	&__second-div {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+
+	&__button {
+		background-color: $color-primary-1;
+		width: 7rem;
+		color: $color-white-1;
+		font-size: 2.5rem;
+		border: transparent;
+		outline: transparent;
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+		cursor: pointer;
+		text-decoration: none;
+
+		margin-left: auto;
+
+		// Necessary due to Link being an inline element by default
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:active {
+			background-color: $color-primary-light-1;
+		}
+
+		&:visited {
+			color: $color-white-1;
+		}
+	}
+
+	&__button-text {
+		writing-mode: vertical-lr;
+		text-orientation: upright;
+	}
 }
 .footer {
 	background-color: $color-black-1;
@@ -404,7 +486,7 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-end;
 
 	&__navigation {
 	}
@@ -417,15 +499,13 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	}
 
 	&__item {
-		// &:not(:last-child) {
-		// 	margin-right: 1rem;
-		// }
 	}
 	&__link:link,
 	&__link:visited {
 		text-decoration: none;
 		color: $color-gray-dark-2;
-
+		font-size: 2rem;
+		transition: all 0.2s ease-in-out;
 		&:hover {
 			color: $color-primary-1;
 		}
@@ -453,7 +533,7 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	width: 40rem;
 	height: 50rem;
 	color: $color-gray-light-1;
-	border-radius: 2.5rem;
+	border-radius: 0.7rem;
 	box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.3);
 
 	display: flex;
@@ -561,4 +641,70 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 .ingredients {
 	display: flex;
 	flex-direction: column;
+}
+
+.cart {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	width: 100%;
+
+	&__left-container {
+		flex: 7;
+		height: 100%;
+		width: 100%;
+		border-right: 2px solid $color-primary-1;
+		display: flex;
+		flex-direction: column;
+	}
+	&__right-container {
+		flex: 3;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__heading {
+		height: 10rem;
+		font-size: 4rem;
+		justify-self: center;
+		background: linear-gradient(
+			to bottom,
+			$color-primary-1,
+			$color-primary-dark-1
+		);
+	}
+
+	&-list {
+		list-style: none;
+		width: 100%;
+
+		&__item {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+
+			padding: 2rem;
+			&:not(:last-child) {
+				border-bottom: 1px solid $color-primary-1;
+			}
+
+			&--btn-remove {
+				background-color: $color-primary-dark-1;
+				order: 2;
+				margin-left: auto;
+			}
+		}
+	}
+
+	&-total {
+		&__heading {
+			margin-top: 5rem;
+		}
+
+		&__button-confirm {
+			margin-bottom: 10rem;
+		}
+	}
 }

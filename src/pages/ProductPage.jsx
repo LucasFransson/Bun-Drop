@@ -88,11 +88,11 @@ function ProductPage() {
 					styleClass="btn btn__add-cart"
 				></Button>
 
-				<Button
+				{/* <Button
 					text="Go to Home Page"
 					onClick={() => history.push('/')}
 					styleClass="btn btn__nav "
-				></Button>
+				></Button> */}
 
 				<Button
 					text="Add Favorite"

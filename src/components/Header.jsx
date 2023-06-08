@@ -15,11 +15,16 @@ function Header() {
 				className="header__logo"
 			/>
 			<h1 className="header__title">Bun Drop</h1>
-			<form className="search">
-				<input type="text" className="search__input" placeholder="Search" />
-				<SearchIcon className="search__icon" />
-				<button className="search__button"></button>
-			</form>
+			{/* // THIS IS MEANT FOR A SEARCHBAR IN THE HEADER USING CONTEXT TO AUTOMATICALLY REDIRECT THE USER TO THE MENU */}
+			{/* <form className="header-search">
+				<input
+					type="text"
+					className="header-search__input"
+					placeholder="Search"
+				/>
+				<SearchIcon className="header-search__icon" />
+				<button className="header-search__button"></button>
+			</form> */}
 			<nav className="user-nav">
 				<div className="user-nav__user">
 					<UserIcon className="user-nav__icon" />
