@@ -115,7 +115,9 @@ function Cart() {
 	return (
 		<div className="cart">
 			<div className="cart__left-container">
-				<h2 className="cart__heading">CART</h2>
+				<h2 className="cart__heading">
+					<span className="cart__heading--text">CART</span>
+				</h2>
 				<ul className="cart-list">
 					{cart.map((item) => (
 						<li key={item.id} className="cart-list__item">
@@ -144,55 +146,71 @@ function Cart() {
 			</div>
 			{/* RIGHT SIDE CONTAINER / TOTAL CHECKOUT */}
 			<div className="cart__right-container">
-				<form onSubmit={(event) => handleSubmit(event)}>
+				<form
+					onSubmit={(event) => handleSubmit(event)}
+					className="cart-checkout"
+				>
 					<h2 className="cart-total__heading">
 						Total: {cart.length > 0 ? `$${totalPrice}` : 'Cart is empty'}
 					</h2>
 					{/* ADRESS/ DELIEVERY  */}
-					<label htmlFor="city">City:</label>
-					<input
-						type="text"
-						id="city"
-						value={city}
-						onChange={(e) => setCity(e.target.value)}
-					/>
-					{errors.city && <p>{errors.city}</p>}
+					<div className="cart-checkout__adress">
+						<label htmlFor="city">City:</label>
+						<input
+							type="text"
+							id="city"
+							value={city}
+							onChange={(e) => setCity(e.target.value)}
+						/>
+						{errors.city && (
+							<p className="cart-checkout__error">{errors.city}</p>
+						)}
 
-					<label htmlFor="street">Street:</label>
-					<input
-						type="text"
-						id="street"
-						value={street}
-						onChange={(e) => setStreet(e.target.value)}
-					/>
-					{errors.street && <p>{errors.street}</p>}
+						<label htmlFor="street">Street:</label>
+						<input
+							type="text"
+							id="street"
+							value={street}
+							onChange={(e) => setStreet(e.target.value)}
+						/>
+						{errors.street && (
+							<p className="cart-checkout__error">{errors.street}</p>
+						)}
 
-					<label htmlFor="house-number">House Number:</label>
-					<input
-						type="text"
-						id="house-number"
-						value={houseNumber}
-						onChange={(e) => setHouseNumber(e.target.value)}
-					/>
-					{errors.houseNumber && <p>{errors.houseNumber}</p>}
+						<label htmlFor="house-number">House Number:</label>
+						<input
+							type="text"
+							id="house-number"
+							value={houseNumber}
+							onChange={(e) => setHouseNumber(e.target.value)}
+						/>
+						{errors.houseNumber && (
+							<p className="cart-checkout__error">{errors.houseNumber}</p>
+						)}
+					</div>
+					{/* PAYMENT INFORMATION */}
 					<div className="cart-checkout__checkbox-container">
-						<label htmlFor="checkbox-swish">Swish</label>
-						<input
-							type="checkbox"
-							id="checkbox-swish"
-							checked={paymentMethod === 'swish'}
-							onChange={() => setPaymentMethod('swish')}
-						/>
-						{/* PAYMENT INFORMATION */}
-						<label htmlFor="checkbox-card">Card</label>
-						<input
-							type="checkbox"
-							id="checkbox-card"
-							checked={paymentMethod === 'card'}
-							onChange={() => setPaymentMethod('card')}
-						/>
+						<div>
+							<label htmlFor="checkbox-swish">Swish</label>
+							<input
+								type="checkbox"
+								id="checkbox-swish"
+								checked={paymentMethod === 'swish'}
+								onChange={() => setPaymentMethod('swish')}
+							/>
+						</div>
+						<div>
+							<label htmlFor="checkbox-card">Card</label>
+							<input
+								type="checkbox"
+								id="checkbox-card"
+								checked={paymentMethod === 'card'}
+								onChange={() => setPaymentMethod('card')}
+							/>
+						</div>
 					</div>
 					{/* SWISH PAYMENT METHOD */}
+					{/* <div className="cart-checkout__payment"> */}
 					{paymentMethod === 'swish' && (
 						<div className="cart-checkout__swish-container">
 							<label htmlFor="phone-number">Phone Number:</label>
@@ -202,7 +220,9 @@ function Cart() {
 								value={phoneNumber}
 								onChange={(e) => setPhoneNumber(e.target.value)}
 							/>
-							{errors.phoneNumber && <p>{errors.phoneNumber}</p>}
+							{errors.phoneNumber && (
+								<p className="cart-checkout__error">{errors.phoneNumber}</p>
+							)}
 						</div>
 					)}
 					{/* CARD PAYMENT METHOD */}
@@ -215,7 +235,9 @@ function Cart() {
 								value={cardNumber}
 								onChange={(e) => setCardNumber(e.target.value)}
 							/>
-							{errors.cardNumber && <p>{errors.cardNumber}</p>}
+							{errors.cardNumber && (
+								<p className="cart-checkout__error">{errors.cardNumber}</p>
+							)}
 
 							<label htmlFor="expiration-date">Expiry Date:</label>
 							<input
@@ -224,7 +246,9 @@ function Cart() {
 								value={expirationDate}
 								onChange={(e) => setExpirationDate(e.target.value)}
 							/>
-							{errors.expiryDate && <p>{errors.expiryDate}</p>}
+							{errors.expiryDate && (
+								<p className="cart-checkout__error">{errors.expiryDate}</p>
+							)}
 
 							<label htmlFor="cvc">CVC:</label>
 							<input
@@ -233,9 +257,12 @@ function Cart() {
 								value={cvc}
 								onChange={(e) => setCvc(e.target.value)}
 							/>
-							{errors.cvc && <p>{errors.cvc}</p>}
+							{errors.cvc && (
+								<p className="cart-checkout__error">{errors.cvc}</p>
+							)}
 						</div>
 					)}
+					{/* </div> */}
 					<button
 						type="submit"
 						className="cart-checkout__button-confirm"

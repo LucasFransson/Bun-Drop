@@ -791,6 +791,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
 	box-shadow: $--shadow-dark;
 	// max-width: 90vw;
 	// max-height: 80vh;
@@ -880,10 +881,12 @@
 		border: none;
 		color: $color-white-1;
 		background-color: $color-primary-1;
+		padding: 0.5rem 1rem;
 		height: 5rem;
 		font-size: 3rem;
 		margin-top: 2rem;
 		margin-left: 2rem;
+		text-transform: uppercase;
 		cursor: pointer;
 	}
 
@@ -997,7 +1000,7 @@
 	width: 100%;
 
 	&__left-container {
-		flex: 7;
+		flex: 6;
 		height: 100%;
 		width: 100%;
 		border-right: 2px solid $color-primary-1;
@@ -1005,7 +1008,7 @@
 		flex-direction: column;
 	}
 	&__right-container {
-		flex: 3;
+		flex: 4;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -1016,11 +1019,17 @@
 		height: 10rem;
 		font-size: 4rem;
 		justify-self: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $color-white-1;
 		background: linear-gradient(
 			to bottom,
 			$color-primary-1,
 			$color-primary-dark-1
 		);
+		&--text {
+		}
 	}
 
 	&-list {
@@ -1051,8 +1060,54 @@
 		}
 	}
 	&-checkout {
+		width: 70%;
+		display: flex;
+		flex-direction: column;
+
+		&__adress {
+			margin-top: 5rem;
+			margin-bottom: 2rem;
+			//background-color: $color-primary-light-1;
+			display: flex;
+			flex-direction: column;
+			//width: 30rem;
+			border-bottom: 2px solid $color-gray-dark-1;
+		}
+
+		&__card-container {
+			display: flex;
+			flex-direction: column;
+		}
+		&__error {
+			color: $color-primary-1;
+		}
+
+		&__checkbox-container {
+			display: flex;
+			align-items: first baseline;
+			justify-content: space-around;
+
+			margin-bottom: 3rem;
+		}
+
 		&__button-confirm {
-			margin-bottom: 10rem;
+			// margin-bottom: 10rem;
+			margin-top: 5rem;
+			margin-bottom: 3rem;
+			align-self: center;
+			font-size: 2rem;
+			padding: 1rem 2.5rem;
+			letter-spacing: 0.2rem;
+			border-radius: 0.5rem;
+			color: $color-black-1;
+			box-shadow: 0.5rem 0.5rem 1rem 0.1rem rgba(0, 0, 0, 0.2);
+			background-color: $color-green-1;
+			cursor: pointer;
+			transition: all.2s;
+
+			&:hover {
+				background-color: $color-green-2;
+			}
 
 			&--disabled {
 				pointer-events: none;
@@ -1060,5 +1115,20 @@
 				opacity: 0.5;
 			}
 		}
+	}
+}
+
+#checkbox-card,
+#checkbox-swish {
+	margin-left: 0.5rem;
+}
+
+.user-page {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	&__favorites {
+	}
+	&__orders {
 	}
 }

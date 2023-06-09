@@ -151,6 +151,15 @@ export async function addOrder(cart, callback) {
 	return Promise.reject(new Error('User not logged in. Failed to add order'));
 }
 
+export function getOrders() {
+	const user = JSON.parse(localStorage.getItem('user'));
+
+	if (user) {
+		return user.orders;
+	}
+	return [];
+}
+
 export function logOutUser() {
 	localStorage.removeItem('username');
 	localStorage.removeItem('user');
