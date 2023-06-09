@@ -24,8 +24,8 @@ function LoginForm() {
 
 		if (user) {
 			console.log(`${username} have logged in`);
-			logInUser(username);
-			// logInUser(user);  Now it's Object Object so possible that I can get the id straight from the user object instead
+			//logInUser(username);
+			logInUser(username, user); // Now it's Object Object so possible that I can get the id straight from the user object instead
 		} else {
 			console.log('Wrong username or password');
 		}

@@ -16,9 +16,16 @@ export function clearCart() {
 	localStorage.removeItem('cart');
 }
 
+// emptyCart function is made for testing if its better to empty/update the cart or just remove it and create a new one
+export function emptyCart() {
+	localStorage.setItem('cart', JSON.stringify([]));
+}
+
 export function getTotalPrice() {
 	const cart = getCart();
-	return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+	return cart
+		.reduce((total, item) => total + item.price * item.quantity, 0)
+		.toFixed(2); // toFixed(2) to get 2 decimals and not a googleplex decimals
 }
 
 export function addToCart(item) {

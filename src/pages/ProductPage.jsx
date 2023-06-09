@@ -1,10 +1,18 @@
 import { useParams } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import Button from '../components/button';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../utils/CartContext';
 import { addToCart } from '../utils/cartService';
-import { addFavorite, getUserName, getUserId } from '../utils/userService';
+import {
+	addFavorite,
+	removeFavorite,
+	isItemFavorite,
+	getUserName,
+	getUserId,
+} from '../utils/userService';
+import { ReactComponent as HeartIcon } from '/public/svg/SVG/heart1.svg';
+import { ReactComponent as BrokenHeartIcon } from '/public/svg/SVG/heart-broken.svg';
 
 function ProductPage() {
 	const { burgerId } = useParams();
@@ -13,13 +21,16 @@ function ProductPage() {
 	// Cart
 	const { setCart } = useContext(CartContext);
 	const [quantity, setQuantity] = useState(1);
+	const [isFavorite, setIsFavorite] = useState(false);
 
-	// const handleAddToCart = () => {
-	// 	const itemWithQuantity = { ...burger, quantity };
+	const checkFavoriteStatus = async () => {
+		const favoriteStatus = await isItemFavorite(burger);
+		setIsFavorite(favoriteStatus);
+	};
 
-	// 	addToCart(itemWithQuantity);
-	// 	setCart((prevCart) => [...prevCart, itemWithQuantity]);
-	// };
+	useEffect(() => {
+		checkFavoriteStatus();
+	}, [burger]);
 
 	const handleAddToCart = () => {
 		const itemWithQuantity = { ...burger, quantity: Number(quantity) }; // Convert quantity to a number
@@ -88,23 +99,87 @@ function ProductPage() {
 					styleClass="btn btn__add-cart"
 				></Button>
 
-				{/* <Button
-					text="Go to Home Page"
-					onClick={() => history.push('/')}
-					styleClass="btn btn__nav "
-				></Button> */}
-
-				<Button
-					text="Add Favorite"
-					onClick={async () => {
-						const userId = await getUserId(getUserName());
-						addFavorite(userId, burgerId);
-					}}
-					styleClass="btn btn--favorite"
-				></Button>
+				{isFavorite ? (
+					<BrokenHeartIcon
+						onClick={async () => {
+							await removeFavorite(burger, checkFavoriteStatus);
+						}}
+						className="product__button--favorite"
+					></BrokenHeartIcon>
+				) : (
+					<HeartIcon
+						onClick={async () => {
+							await addFavorite(burger, checkFavoriteStatus);
+						}}
+						className="product__button--favorite"
+					></HeartIcon>
+				)}
 			</div>
 		</>
 	);
 }
 
 export default ProductPage;
+
+{
+	/* <Button
+					text="Go to Home Page"
+					onClick={() => history.push('/')}
+					styleClass="btn btn__nav "
+				></Button> */
+}
+
+// 	<Button
+// 	text="Add Favorite"
+// 	onClick={async () => {
+// 		const userId = await getUserId(getUserName());
+// 		addFavorite(userId, burger);
+// 	}}
+// 	styleClass="btn btn--favorite"
+// ></Button>
+
+// const handleAddToCart = () => {
+// 	const itemWithQuantity = { ...burger, quantity };
+
+// 	addToCart(itemWithQuantity);
+// 	setCart((prevCart) => [...prevCart, itemWithQuantity]);
+// };
+
+// 	<HeartIcon
+// 	text="Add Favorite"
+// 	onClick={async () => {
+// 		const userId = await getUserId(getUserName());
+// 		addFavorite(userId, burger);
+// 	}}
+// 	className="product__button--favorite"
+// ></HeartIcon>
+
+{
+	/* {isFavorite ? (
+					<HeartIcon
+						onClick={async () => {
+							const userId = await getUserId(getUserName());
+							addFavorite(burger);
+						}}
+						className="product__button--favorite"
+					></HeartIcon>
+				) : (
+					<BrokenHeartIcon
+						onClick={async () => {
+							//const userId = await getUserId(getUserName());
+							// removeFavorite(userId, burger);
+							removeFavorite(burger);
+						}}
+						className="product__button--favorite"
+					></BrokenHeartIcon>
+				)} */
+}
+// useEffect(() => {
+// 	const checkFavoriteStatus = async () => {
+// 		const favoriteStatus = await isItemFavorite(burger);
+// 		console.log('favoriteStatus:', favoriteStatus);
+// 		setIsFavorite(favoriteStatus);
+// 	};
+
+// 	checkFavoriteStatus();
+// }, [burger]);

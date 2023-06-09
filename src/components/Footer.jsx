@@ -4,49 +4,48 @@ function Footer() {
 	return (
 		<>
 			<footer className="footer">
-				<div className="footer__navigation">
-					<ul className="footer__list">
-						<li className="footer__item">
-							<a href="#" className="footer__link">
-								Company
-							</a>
-						</li>
-						<li className="footer__item">
-							<a href="#" className="footer__link">
-								Support
-							</a>
-						</li>
-						<li className="footer__item">
-							<a href="#" className="footer__link">
-								Contact Us
-							</a>
-						</li>{' '}
-						<li className="footer__item">
-							<div className="footer__logo-box">
-								<img
-									src="/public/images/logo color.png"
-									alt="Bun Drop Logo"
-									className="footer__logo"
-								/>
-							</div>
-						</li>
-						<li className="footer__item">
-							<a href="#" className="footer__link">
-								Privacy Policy
-							</a>
-						</li>
-						<li className="footer__item">
-							<a href="#" className="footer__link">
-								Partners
-							</a>
-						</li>
-						<li className="footer__item">
-							<a href="#" className="footer__link">
-								Terms
-							</a>
-						</li>
-					</ul>
-					{/* <ul className="footer__list">
+				<ul className="footer__list">
+					<li className="footer__item">
+						<a href="#" className="footer__link">
+							Company
+						</a>
+					</li>
+					<li className="footer__item">
+						<a href="#" className="footer__link">
+							Support
+						</a>
+					</li>
+					<li className="footer__item">
+						<a href="#" className="footer__link">
+							Contact Us
+						</a>
+					</li>{' '}
+					<li className="footer__item--logo">
+						<div className="footer__logo-box">
+							<img
+								src="/public/images/logo color.png"
+								alt="Bun Drop Logo"
+								className="footer__logo"
+							/>
+						</div>
+					</li>
+					<li className="footer__item">
+						<a href="#" className="footer__link">
+							Privacy Policy
+						</a>
+					</li>
+					<li className="footer__item">
+						<a href="#" className="footer__link">
+							Partners
+						</a>
+					</li>
+					<li className="footer__item">
+						<a href="#" className="footer__link">
+							Terms
+						</a>
+					</li>
+				</ul>
+				{/* <ul className="footer__list">
 						{[
 							'Company',
 							'Support',
@@ -71,7 +70,6 @@ function Footer() {
 							</div>
 						</li>
 					</ul> */}
-				</div>
 			</footer>
 		</>
 	);

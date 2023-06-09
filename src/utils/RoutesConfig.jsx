@@ -8,6 +8,8 @@ import LoginForm from '../components/LoginForm';
 import Main from '../components/Main';
 import Aside from '../components/Aside';
 import Info from '../pages/Info';
+import Confirmation from '../components/Confirmation';
+import UserPage from '../pages/UserPage';
 
 const RoutesConfig = () => {
 	return (
@@ -20,8 +22,10 @@ const RoutesConfig = () => {
 			<Route path="/menu" element={<Menu />} />
 			<Route path="/cart" element={<Cart />}></Route>
 			<Route path="/info" element={<Info />} />
+			<Route path="/confirmation" element={<Confirmation />} />
 			<Route path="/login" element={<LoginForm />} />
-			<Route path="*" element={NotFoundPage} />
+			<Route path="/user" element={<UserPage />} />
+			<Route path="*" element={<NotFoundPage />} />
 		</Routes>
 	);
 };

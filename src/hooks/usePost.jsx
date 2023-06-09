@@ -1,3 +1,6 @@
+// I Made this hook at the same time as I mate the useFetch hook, but since I can't use it due to JSON-server not supporting POST requests it is not used in the project atm.
+// If I have lots of time left: Check if its worth creating a usePut hook instead. but I don't think its worth it for this project.
+
 import { useState } from 'react';
 import React from 'react';
 

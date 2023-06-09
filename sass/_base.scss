@@ -1,3 +1,19 @@
+$color-primary-1: #c72c41;
+$color-primary-light-1: #db3d52;
+$color-primary-dark-1: #801336;
+
+$color-white-1: #fff;
+
+$color-gray-light-1: #d9d9d9;
+
+$color-gray-dark-1: #404040; // not part of color palette!
+$color-gray-dark-2: #6a6d70;
+
+$color-black-1: #191e29; // color blackish blueish
+$color-black-2: #140b0e; // color blackish redish
+
+$--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
+
 *,
 *::before,
 *::after {
@@ -28,4 +44,16 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
 }

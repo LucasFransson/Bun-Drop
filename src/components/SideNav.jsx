@@ -21,16 +21,17 @@ function SideNav() {
 						<span>CART</span>
 					</Link>
 				</li>
-				<li className="side-nav__item">
-					<Link to={'/info'} className="side-nav__link">
-						{<InfoIcon className="side-nav__icon" />}
-						<span>INFO</span>
-					</Link>
-				</li>
+
 				<li className="side-nav__item">
 					<Link to={'/'} className="side-nav__link">
 						{<HomeIcon className="side-nav__icon" />}
 						<span>HOME</span>
+					</Link>
+				</li>
+				<li className="side-nav__item">
+					<Link to={'/info'} className="side-nav__link">
+						{<InfoIcon className="side-nav__icon" />}
+						<span>INFO</span>
 					</Link>
 				</li>
 			</ul>
