@@ -1052,6 +1052,7 @@
 	height: 100%;
 	width: 100%;
 
+	border-top: 0.5rem solid $color-black-1;
 	@include responsive(phone) {
 		flex-direction: column;
 		font-size: 2.2rem;
@@ -1069,7 +1070,7 @@
 		flex: 4;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: stretch;
 		justify-content: space-between;
 	}
 
@@ -1097,12 +1098,18 @@
 		&__item {
 			width: 100%;
 			display: flex;
-			flex-direction: row;
-
+			flex-direction: column;
+			align-items: center;
 			padding: 2rem;
-			&:not(:last-child) {
-				border-bottom: 1px solid $color-primary-1;
+
+			&--name {
+				font-size: 2rem;
+				color: $color-black-2;
 			}
+			border-bottom: 1px solid $color-gray-dark-1;
+			// &:not(:last-child) {
+			// 	border-bottom: 1px solid $color-primary-1;
+			// }
 		}
 		&__button {
 			&--remove {
@@ -1133,15 +1140,26 @@
 
 	&-total {
 		&__heading {
-			margin-top: 5rem;
+			height: 10rem;
+			width: 100%;
+			font-size: 3rem;
+			justify-self: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $color-white-1;
+			text-transform: uppercase;
+			background: linear-gradient(to bottom, $color-black-1, $color-black-2);
 		}
 	}
 	&-checkout {
-		width: 50%;
+		width: 100%;
 		display: flex;
+		align-items: center;
 		flex-direction: column;
 
 		&__adress {
+			width: 50%;
 			margin-top: 5rem;
 			margin-bottom: 2rem;
 			//background-color: $color-primary-light-1;
@@ -1153,6 +1171,7 @@
 
 		&__card-container,
 		&__swish-container {
+			width: 50%;
 			display: flex;
 			flex-direction: column;
 		}
