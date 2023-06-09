@@ -121,25 +121,36 @@ function Cart() {
 				<ul className="cart-list">
 					{cart.map((item) => (
 						<li key={item.id} className="cart-list__item">
-							{item.name} - ${item.price} x {item.quantity} = $
-							{item.price * item.quantity}
+							<p className="cart-list__item--name">{item.name}</p>{' '}
+							<p className="cart-list__item--price">
+								{' '}
+								Price per Item: {item.price}
+							</p>
+							<p className="cart-list__item--quantity">
+								Quantity: {item.quantity}
+							</p>
+							<p className="cart-list__item--total-cost">
+								Cost: $ {item.price * item.quantity}
+							</p>{' '}
 							<BinIcon
 								onClick={() => handleRemoveFromCart(item.id)}
-								className="cart-list__item--btn-remove"
+								className="cart-list__button--remove"
 							>
 								Remove from cart
 							</BinIcon>
-							<PlusIcon
-								text="+"
-								onClick={() => handleIncreaseQuantity(item)}
-								styleClass="btn btn__quantity--increase"
-							></PlusIcon>
-							<MinusIcon
-								text="-"
-								onClick={() => handleDecreaseQuantity(item)}
-								styleClass="btn btn__decrease-quantity"
-								disabled={item.quantity <= 0}
-							></MinusIcon>
+							<div>
+								<PlusIcon
+									text="+"
+									onClick={() => handleIncreaseQuantity(item)}
+									className="cart-list__button--increase"
+								></PlusIcon>
+								<MinusIcon
+									text="-"
+									onClick={() => handleDecreaseQuantity(item)}
+									className="cart-list__button--decrease"
+									disabled={item.quantity <= 0}
+								></MinusIcon>{' '}
+							</div>
 						</li>
 					))}
 				</ul>

@@ -675,14 +675,30 @@ input[type='number'] {
     .cart-list__item {
       width: 100%;
       display: flex;
-      flex-direction: row;
-      padding: 2rem; }
-      .cart-list__item:not(:last-child) {
-        border-bottom: 1px solid #c72c41; }
-      .cart-list__item--btn-remove {
-        fill: #801336;
-        order: 2;
-        margin-left: auto; }
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      border-bottom: 1px solid #404040; }
+      .cart-list__item--name {
+        font-size: 2rem;
+        color: #140b0e; }
+    .cart-list__button--remove {
+      fill: #801336;
+      order: 2;
+      margin-left: auto;
+      cursor: pointer; }
+      .cart-list__button--remove:hover {
+        fill: #c72c41; }
+    .cart-list__button--increase {
+      fill: #aed581;
+      cursor: pointer; }
+      .cart-list__button--increase:hover {
+        fill: #acef5e; }
+    .cart-list__button--decrease {
+      fill: #801336;
+      cursor: pointer; }
+      .cart-list__button--decrease:hover {
+        fill: #c72c41; }
   .cart-total__heading {
     margin-top: 5rem; }
   .cart-checkout {
