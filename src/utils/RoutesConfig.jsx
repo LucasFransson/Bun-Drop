@@ -10,6 +10,7 @@ import Aside from '../components/Aside';
 import Info from '../pages/Info';
 import Confirmation from '../components/Confirmation';
 import UserPage from '../pages/UserPage';
+import RegisterForm from '../components/RegisterForm';
 
 const RoutesConfig = () => {
 	return (
@@ -24,6 +25,7 @@ const RoutesConfig = () => {
 			<Route path="/info" element={<Info />} />
 			<Route path="/confirmation" element={<Confirmation />} />
 			<Route path="/login" element={<LoginForm />} />
+			<Route path="/register" element={<RegisterForm />} />
 			<Route path="/user" element={<UserPage />} />
 			<Route path="*" element={<NotFoundPage />} />
 		</Routes>

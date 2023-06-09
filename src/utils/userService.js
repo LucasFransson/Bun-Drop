@@ -3,22 +3,46 @@
 // I decided now however that I will store the entire object to make the code more readable and less messy, so I will refactor this code later, for now I will keep it as it is and let some of the old code remain.
 
 // Change this, use the new usePost hook instead!
-export async function registerUser(username, password) {
+// export async function registerUser(username, password) {
+// 	const response = await fetch('http://localhost:7000/users', {
+// 		method: 'POST',
+// 		headers: {
+// 			'Content-Type': 'application/json',
+// 		},
+// 		body: JSON.stringify({
+// 			username: username,
+// 			password: password,
+// 		}),
+// 	});
+// 	const data = await response.json();
+// 	if (data.error) {
+// 		alert(data.error);
+// 	} else {
+// 		logInUser(username, password);
+// 	}
+// }
+
+export async function registerUser(user) {
 	const response = await fetch('http://localhost:7000/users', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({
-			username: username,
-			password: password,
+			name: user.name,
+			password: user.password,
+			favorites: [],
+			orders: [],
 		}),
 	});
+
 	const data = await response.json();
-	if (data.error) {
-		alert(data.error);
+	if (response.ok) {
+		alert('You have successfully registered'); // I know this is ugly, i will replace it with a confirm message later
+		// console.log(`${user.name} has registered`);
+		// logInUser(user.name, user.password);		// This crashes the app, some async error
 	} else {
-		logInUser(username, password);
+		alert('Failed to register', data.error);
 	}
 }
 
@@ -151,6 +175,7 @@ export async function addOrder(cart, callback) {
 	return Promise.reject(new Error('User not logged in. Failed to add order'));
 }
 
+// This function causes an error
 export function getOrders() {
 	const user = JSON.parse(localStorage.getItem('user'));
 

@@ -1,5 +1,8 @@
+// This should be improved in the future, especially validation errors/messages, but don't have time for that atm
+// also moved to pages
 import React, { useState } from 'react';
 import { logInUser } from '../utils/userService';
+import { Link } from 'react-router-dom';
 
 function LoginForm() {
 	const [username, setUsername] = useState('');
@@ -73,6 +76,21 @@ function LoginForm() {
 					<button type="submit" className="login__button--login">
 						Login
 					</button>
+					<div className="register-link__container">
+						<label
+							htmlFor="register-link"
+							className="register-link__container--label"
+						>
+							Not a user?
+						</label>
+						<Link
+							to={'/register'}
+							id={'register-link'}
+							className="register-link__container--link"
+						>
+							Register here
+						</Link>
+					</div>
 				</form>
 			</div>
 		</>
