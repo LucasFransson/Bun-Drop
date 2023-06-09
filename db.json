@@ -408,7 +408,74 @@
       "id": 1,
       "name": "user",
       "password": "password",
-      "favorites": [],
+      "favorites": [
+        {
+          "id": 2,
+          "name": "Chicken Delight",
+          "image": "/public/images/burger2.png",
+          "category": "Poultry",
+          "price": 9.99,
+          "description": "Juicy grilled chicken for a lighter touch.",
+          "ingredients": [
+            "Grilled Chicken",
+            "Lettuce",
+            "Tomato",
+            "Onion",
+            "Mayo",
+            "Bun"
+          ],
+          "nutrients": {
+            "calories": 300,
+            "protein": 28,
+            "carbs": 33,
+            "fat": 9
+          }
+        },
+        {
+          "id": 1,
+          "name": "Classic Beef Burger",
+          "image": "/public/images/burger3.png",
+          "category": "Meat",
+          "price": 10.99,
+          "description": "A timeless classic with our special seasoning.",
+          "ingredients": [
+            "Beef Patty",
+            "Lettuce",
+            "Tomato",
+            "Onion",
+            "Cheese",
+            "Bun"
+          ],
+          "nutrients": {
+            "calories": 350,
+            "protein": 20,
+            "carbs": 32,
+            "fat": 17
+          }
+        },
+        {
+          "id": 3,
+          "name": "Spicy Bean Burger",
+          "image": "/public/images/burger4.png",
+          "category": "Vegan",
+          "price": 11.49,
+          "description": "A fiery explosion of taste with wholesome beans.",
+          "ingredients": [
+            "Bean Patty",
+            "Lettuce",
+            "Tomato",
+            "Onion",
+            "Vegan Cheese",
+            "Bun"
+          ],
+          "nutrients": {
+            "calories": 320,
+            "protein": 18,
+            "carbs": 58,
+            "fat": 5
+          }
+        }
+      ],
       "orders": [
         {
           "orderId": 417741,

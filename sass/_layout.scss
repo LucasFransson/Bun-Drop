@@ -1060,7 +1060,7 @@
 		}
 	}
 	&-checkout {
-		width: 70%;
+		width: 50%;
 		display: flex;
 		flex-direction: column;
 
@@ -1071,13 +1071,15 @@
 			display: flex;
 			flex-direction: column;
 			//width: 30rem;
-			border-bottom: 2px solid $color-gray-dark-1;
+			// border-bottom: 2px solid $color-gray-dark-1;
 		}
 
-		&__card-container {
+		&__card-container,
+		&__swish-container {
 			display: flex;
 			flex-direction: column;
 		}
+
 		&__error {
 			color: $color-primary-1;
 		}
