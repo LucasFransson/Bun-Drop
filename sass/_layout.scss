@@ -146,8 +146,26 @@
 		height: 8rem;
 		margin-right: 5rem;
 	}
-	// &__user-photo {
-	// }
+
+	&__login-link {
+		all: unset;
+		margin-right: 5rem;
+		font-size: 2.5rem;
+		transition: all 0.2s ease-in-out;
+		padding: 1rem 2rem;
+		background-color: $color-primary-light-1;
+		color: $color-white-1;
+
+		&:hover {
+			font-size: 2.6rem;
+
+			box-shadow: 0rem 1rem 20px 1px rgba(0, 0, 0, 0.2);
+		}
+		&:active {
+			color: $color-primary-light-1;
+			background-color: $color-white-1;
+		}
+	}
 
 	&__dropdown {
 		position: absolute;
@@ -155,7 +173,7 @@
 		border: 0.5rem solid $color-gray-light-1;
 		box-shadow: 0px 0.8rem 1.6rem 0px rgba(0, 0, 0, 0.2);
 		padding: 1.2rem 1rem;
-		z-index: 1;
+		z-index: 1000;
 	}
 
 	&__dropdown-item {
