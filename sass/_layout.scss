@@ -209,7 +209,7 @@
 	// code for the grid displayed in some components with different url
 	display: flex;
 	flex-direction: column;
-	min-width: 80%;
+	min-width: 83%;
 }
 
 .sidebar {
@@ -746,6 +746,7 @@
 	align-items: center;
 	&__title {
 		padding-top: 2rem;
+		color: $color-white-1;
 	}
 	&__image {
 		// width: 20rem;

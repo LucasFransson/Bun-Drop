@@ -157,7 +157,7 @@ input[type='number'] {
 .content__menu {
   display: flex;
   flex-direction: column;
-  min-width: 80%; }
+  min-width: 83%; }
 
 .sidebar {
   background-color: #191e29;
@@ -552,7 +552,8 @@ input[type='number'] {
   justify-content: space-around;
   align-items: center; }
   .card__title {
-    padding-top: 2rem; }
+    padding-top: 2rem;
+    color: #fff; }
   .card__image {
     height: 20rem; }
   .card__category {
