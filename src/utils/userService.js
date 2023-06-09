@@ -101,11 +101,36 @@ export async function isItemFavorite(item) {
 
 // Add Order object conntected to user to database
 
-export async function addOrder(order, callback) {
+export async function addOrder(cart, callback) {
 	const user = JSON.parse(localStorage.getItem('user'));
 
 	if (user) {
-		user.orders.push(order);
+		// generate a random number for the order id (This is not the way to do this, but im doing it here to illustrate an unique order id )
+		const orderId = Math.floor(Math.random() * 1000000);
+
+		// get the total price of the cart items
+		const totalPrice = cart.reduce(
+			(total, item) => total + item.price * item.quantity,
+			0
+		);
+
+		//get the current time in the IS0 format (y-m-d h:m:s)
+		const currentTime = new Date().toISOString();
+
+		// iterate over the cart items to create an order objec
+		const newOrder = cart.map((item) => ({
+			orderId: orderId,
+			id: item.id,
+			name: item.name,
+			quantity: item.quantity,
+			price: item.price,
+			totalPrice: totalPrice,
+			time: currentTime,
+		}));
+
+		// Push the new order into the users orders array
+		user.orders.push(...newOrder);
+
 		const response = await fetch(`http://localhost:7000/users/${user.id}`, {
 			method: 'PUT',
 			headers: {
@@ -115,7 +140,7 @@ export async function addOrder(order, callback) {
 		});
 		if (response.ok) {
 			localStorage.setItem('user', JSON.stringify(user));
-			callback(); // update the local state
+			callback(); // update the local state ( not sure if this is needed here, but it follows the rest of the design pattern)
 		} else {
 			return Promise.reject(new Error('Failed to add order'));
 		}
