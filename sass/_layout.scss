@@ -1208,6 +1208,11 @@
 	justify-content: space-around;
 
 	& h2 {
+		text-align: center;
+		margin-top: 2rem;
+		font-size: 4rem;
+		margin-bottom: 2rem;
+		border-bottom: 2px solid $color-gray-dark-1;
 		@include responsive(phone) {
 			text-align: center;
 			margin-top: 5rem;
