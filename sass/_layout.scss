@@ -1070,7 +1070,8 @@
 
 			&--disabled {
 				pointer-events: none;
-				cursor: not-allowed; // why is this not working?
+				//cursor: not-allowed;
+				background-color: $color-gray-dark-2;
 				opacity: 0.5;
 			}
 		}

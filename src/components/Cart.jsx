@@ -276,7 +276,9 @@ function Cart() {
 					{/* </div> */}
 					<button
 						type="submit"
-						className="cart-checkout__button-confirm"
+						className={`cart-checkout__button-confirm ${
+							cart.length === 0 ? 'cart-checkout__button-confirm--disabled' : ''
+						}`}
 						disabled={cart.length === 0}
 					>
 						CONFIRM

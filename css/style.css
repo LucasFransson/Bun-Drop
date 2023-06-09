@@ -737,7 +737,7 @@ input[type='number'] {
         background-color: #acef5e; }
       .cart-checkout__button-confirm--disabled {
         pointer-events: none;
-        cursor: not-allowed;
+        background-color: #6a6d70;
         opacity: 0.5; }
 
 #checkbox-card,
