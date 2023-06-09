@@ -12,6 +12,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	width: 100vw;
 
 	&__logo {
 		width: 8rem;
@@ -194,6 +195,10 @@
 	background-color: $color-white-1;
 	min-height: 70vh;
 
+	@include responsive(tab-land) {
+		flex-direction: column;
+		min-width: 100vw;
+	}
 	@include responsive(phone) {
 		flex-direction: column;
 	}
@@ -229,6 +234,13 @@
 	margin-top: 4rem;
 	list-style: none;
 
+	@include responsive(tab-land) {
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		justify-content: space-evenly;
+		margin: 0;
+	}
 	@include responsive(phone) {
 		display: flex;
 		flex-direction: row;
@@ -259,9 +271,6 @@
 		background-color: $color-primary-1;
 		transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
 			background-color 0.1s;
-
-		@include responsive(phone) {
-		}
 	}
 
 	&__item:hover::before,
@@ -537,6 +546,13 @@
 	align-items: end;
 	height: 100%;
 
+	@include responsive(tab-land) {
+		padding-top: 5rem;
+		flex-direction: column;
+		align-items: flex-end;
+		align-items: center;
+		justify-content: space-evenly;
+	}
 	@include responsive(phone) {
 		flex-direction: column;
 		align-items: flex-end;
@@ -557,6 +573,10 @@
 		&--3 {
 			width: 37.5rem;
 		}
+		@include responsive(tab-land) {
+			width: 45rem;
+			object-fit: unset;
+		}
 		@include responsive(phone) {
 			width: 45rem;
 			object-fit: unset;
@@ -571,6 +591,11 @@
 		flex-direction: row;
 		justify-content: space-evenly;
 
+		@include responsive(tab-land) {
+			flex-direction: column;
+			align-items: center;
+			order: 3;
+		}
 		@include responsive(phone) {
 			flex-direction: column;
 			align-items: center;
@@ -596,6 +621,11 @@
 		justify-content: center;
 		align-items: center;
 
+		@include responsive(tab-land) {
+			margin: 2rem 0;
+			width: 90%;
+			order: 2;
+		}
 		@include responsive(phone) {
 			margin: 2rem 0;
 			width: 90%;
@@ -614,7 +644,11 @@
 	&__button-text {
 		writing-mode: vertical-lr;
 		text-orientation: upright;
-
+		@include responsive(tab-land) {
+			writing-mode: unset;
+			text-orientation: unset;
+			font-size: 4rem;
+		}
 		@include responsive(phone) {
 			writing-mode: unset;
 			text-orientation: unset;
@@ -627,7 +661,7 @@
 	background-color: $color-black-1;
 	// border-top: 1px solid $color-gray-dark-1;
 	height: 12rem; // testing purposes only
-
+	width: 100vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -914,7 +948,97 @@
 		cursor: pointer;
 	}
 }
+// .product {
+// 	box-shadow: $--shadow-dark;
+// 	// max-width: 90vw;
+// 	// max-height: 80vh;
+// 	// margin: 10rem auto;
+// 	// min-height: 60rem;
 
+// 	&__button--favorite {
+// 		cursor: pointer;
+// 	}
+
+// 	&__title {
+// 		font-size: 4rem;
+// 		font-weight: bold;
+// 		margin-left: 5rem;
+// 		text-transform: uppercase;
+// 		letter-spacing: 0.7rem;
+// 		margin-right: auto;
+// 	}
+
+// 	&__image {
+// 		width: 8rem;
+// 		margin-left: 2rem;
+// 	}
+
+// 	&__category,
+// 	&__price,
+// 	&__description {
+// 		font-family: inherit;
+// 		font-size: inherit;
+// 		color: inherit;
+// 		background-color: $color-gray-light-1;
+// 		border: none;
+// 		padding: 0.7rem 2rem;
+// 		// border-radius: 100px;
+// 		width: 30%;
+// 		// margin-right: -3.5rem;
+// 		transition: all 0.2s;
+// 	}
+
+// 	&__ingredients__item {
+// 		height: 2rem;
+// 		width: 2rem;
+// 		fill: $color-gray-dark-1;
+// 	}
+
+// 	&btn__add-cart {
+// 		border: none;
+// 		background-color: $color-gray-light-1;
+// 	}
+
+// 	&__button--favorite {
+// 		width: 8rem;
+// 		height: 8rem;
+// 		margin-right: 5rem;
+// 	}
+
+// display: flex;
+// flex-direction: row;
+// flex-wrap: wrap;
+// // align-items: center;
+
+// &__title {
+// 	width: 100%;
+// }
+// &__image {
+// 	flex: 1;
+// }
+// &__category {
+// 	width: 100%;
+// }
+// &__price {
+// 	font-size: 3rem;
+// 	width: 100%;
+// }
+// &__description {
+// 	border-bottom: 2px solid $color-primary-1;
+// 	width: 100%;
+// }
+
+// &__ingredients {
+// 	display: flex;
+// 	flex-direction: column;
+
+// 	list-style: none;
+// 	font-size: 3rem;
+// 	&__item {
+// 		font-size: 2rem;
+// 	}
+// }
+//}
 .ingredients {
 	display: flex;
 	flex-direction: column;
@@ -971,17 +1095,11 @@
 		&__item {
 			width: 100%;
 			display: flex;
-			flex-direction: column;
-			align-items: center;
-			padding: 2rem;
-			border-bottom: 1px solid $color-gray-dark-1;
-			// &:not(:last-child) {
-			// 	border-bottom: 1px solid $color-primary-1;
-			// }
+			flex-direction: row;
 
-			&--name {
-				font-size: 2rem;
-				color: $color-black-2;
+			padding: 2rem;
+			&:not(:last-child) {
+				border-bottom: 1px solid $color-primary-1;
 			}
 		}
 		&__button {
@@ -1070,8 +1188,7 @@
 
 			&--disabled {
 				pointer-events: none;
-				//cursor: not-allowed;
-				background-color: $color-gray-dark-2;
+				cursor: not-allowed; // why is this not working?
 				opacity: 0.5;
 			}
 		}

@@ -56,7 +56,8 @@ input[type='number'] {
   border-bottom: 1px solid #191e29;
   display: flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  width: 100vw; }
   .header__logo {
     width: 8rem;
     margin-left: 2rem; }
@@ -144,6 +145,10 @@ input[type='number'] {
   display: flex;
   background-color: #fff;
   min-height: 70vh; }
+  @media only screen and (max-width: 75em) {
+    .content {
+      flex-direction: column;
+      min-width: 100vw; } }
   @media only screen and (max-width: 37.5em) {
     .content {
       flex-direction: column; } }
@@ -168,6 +173,13 @@ input[type='number'] {
   font-size: 1.7rem;
   margin-top: 4rem;
   list-style: none; }
+  @media only screen and (max-width: 75em) {
+    .side-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: space-evenly;
+      margin: 0; } }
   @media only screen and (max-width: 37.5em) {
     .side-nav {
       display: flex;
@@ -393,6 +405,13 @@ input[type='number'] {
   border-bottom: 1.5rem solid #801336;
   align-items: end;
   height: 100%; }
+  @media only screen and (max-width: 75em) {
+    .section-aside {
+      padding-top: 5rem;
+      flex-direction: column;
+      align-items: flex-end;
+      align-items: center;
+      justify-content: space-evenly; } }
   @media only screen and (max-width: 37.5em) {
     .section-aside {
       flex-direction: column;
@@ -407,6 +426,10 @@ input[type='number'] {
       object-fit: cover; }
     .section-aside__photo--3 {
       width: 37.5rem; }
+    @media only screen and (max-width: 75em) {
+      .section-aside__photo {
+        width: 45rem;
+        object-fit: unset; } }
     @media only screen and (max-width: 37.5em) {
       .section-aside__photo {
         width: 45rem;
@@ -417,6 +440,11 @@ input[type='number'] {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly; }
+    @media only screen and (max-width: 75em) {
+      .section-aside__second-div {
+        flex-direction: column;
+        align-items: center;
+        order: 3; } }
     @media only screen and (max-width: 37.5em) {
       .section-aside__second-div {
         flex-direction: column;
@@ -436,6 +464,11 @@ input[type='number'] {
     display: flex;
     justify-content: center;
     align-items: center; }
+    @media only screen and (max-width: 75em) {
+      .section-aside__button {
+        margin: 2rem 0;
+        width: 90%;
+        order: 2; } }
     @media only screen and (max-width: 37.5em) {
       .section-aside__button {
         margin: 2rem 0;
@@ -448,6 +481,11 @@ input[type='number'] {
   .section-aside__button-text {
     writing-mode: vertical-lr;
     text-orientation: upright; }
+    @media only screen and (max-width: 75em) {
+      .section-aside__button-text {
+        writing-mode: unset;
+        text-orientation: unset;
+        font-size: 4rem; } }
     @media only screen and (max-width: 37.5em) {
       .section-aside__button-text {
         writing-mode: unset;
@@ -457,6 +495,7 @@ input[type='number'] {
 .footer {
   background-color: #191e29;
   height: 12rem;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-end; }
@@ -675,13 +714,10 @@ input[type='number'] {
     .cart-list__item {
       width: 100%;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem;
-      border-bottom: 1px solid #404040; }
-      .cart-list__item--name {
-        font-size: 2rem;
-        color: #140b0e; }
+      flex-direction: row;
+      padding: 2rem; }
+      .cart-list__item:not(:last-child) {
+        border-bottom: 1px solid #c72c41; }
     .cart-list__button--remove {
       fill: #801336;
       order: 2;
@@ -737,7 +773,7 @@ input[type='number'] {
         background-color: #acef5e; }
       .cart-checkout__button-confirm--disabled {
         pointer-events: none;
-        background-color: #6a6d70;
+        cursor: not-allowed;
         opacity: 0.5; }
 
 #checkbox-card,
