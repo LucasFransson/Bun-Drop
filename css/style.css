@@ -57,7 +57,7 @@ input[type='number'] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw; }
+  min-width: 90vw; }
   .header__logo {
     width: 8rem;
     margin-left: 2rem; }
@@ -144,11 +144,12 @@ input[type='number'] {
 .content {
   display: flex;
   background-color: #fff;
-  min-height: 70vh; }
+  min-height: 70vh;
+  min-width: 90%; }
   @media only screen and (max-width: 75em) {
     .content {
       flex-direction: column;
-      min-width: 100vw; } }
+      min-width: 90vw; } }
   @media only screen and (max-width: 37.5em) {
     .content {
       flex-direction: column; } }
@@ -156,14 +157,15 @@ input[type='number'] {
 .content__menu {
   display: flex;
   flex-direction: column;
-  width: 100%; }
+  min-width: 80%; }
 
 .sidebar {
   background-color: #191e29;
   flex: 0 0 17%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  max-width: 90%; }
   @media only screen and (max-width: 37.5em) {
     .sidebar {
       display: flex;
@@ -495,7 +497,7 @@ input[type='number'] {
 .footer {
   background-color: #191e29;
   height: 12rem;
-  width: 100vw;
+  min-width: 90vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-end; }

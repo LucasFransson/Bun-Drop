@@ -12,7 +12,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 100vw;
+	min-width: 90vw;
 
 	&__logo {
 		width: 8rem;
@@ -194,10 +194,11 @@
 	display: flex;
 	background-color: $color-white-1;
 	min-height: 70vh;
+	min-width: 90%;
 
 	@include responsive(tab-land) {
 		flex-direction: column;
-		min-width: 100vw;
+		min-width: 90vw;
 	}
 	@include responsive(phone) {
 		flex-direction: column;
@@ -208,7 +209,7 @@
 	// code for the grid displayed in some components with different url
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	min-width: 80%;
 }
 
 .sidebar {
@@ -217,6 +218,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	max-width: 90%;
 
 	@include responsive(phone) {
 		display: flex;
@@ -661,7 +663,7 @@
 	background-color: $color-black-1;
 	// border-top: 1px solid $color-gray-dark-1;
 	height: 12rem; // testing purposes only
-	width: 100vw;
+	min-width: 90vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
