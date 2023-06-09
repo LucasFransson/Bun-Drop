@@ -113,7 +113,6 @@ input[type='number'] {
     margin-right: 5rem; }
   .user-nav__login-link {
     all: unset;
-    margin-right: 5rem;
     font-size: 2.5rem;
     transition: all 0.2s ease-in-out;
     padding: 1rem 2rem;
@@ -191,7 +190,7 @@ input[type='number'] {
     height: 100%;
     width: 3px;
     background-color: #c72c41;
-    transition: transform 0.2s, width 0.4s 0.2s, background-color 0.1s; }
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s; }
   .side-nav__item:hover::before, .side-nav__item--active::before {
     color: #fff;
     transform: scaleY(1);
@@ -726,3 +725,67 @@ input[type='number'] {
   display: flex;
   flex-direction: row;
   justify-content: space-around; }
+
+.login {
+  background-color: #fff;
+  height: 70vh;
+  display: flex;
+  justify-content: center; }
+  .login__form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .login__heading {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 3.5rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+    color: #fff;
+    background-color: #c72c41;
+    width: 100%;
+    height: 15%;
+    margin-bottom: 2rem; }
+  .login__group {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; }
+    .login__group--name {
+      display: flex;
+      flex-direction: column; }
+    .login__group--password {
+      display: flex;
+      flex-direction: column; }
+  .login__label--name {
+    font-size: 2.5rem; }
+  .login__label--password {
+    font-size: 2.5rem; }
+  .login__input--name {
+    margin-top: 0.5rem;
+    font-size: 2.5rem; }
+  .login__input--password {
+    margin-top: 0.5rem;
+    font-size: 2.5rem; }
+  .login__button--login {
+    margin-top: 12rem;
+    padding: 1rem 8rem;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    align-self: center;
+    transition: all 0.2s cubic-bezier(1, 0, 0, 1);
+    background-color: #c72c41;
+    color: #fff;
+    border: none;
+    cursor: pointer; }
+    .login__button--login:hover {
+      font-size: 2.2rem;
+      box-shadow: 0rem 1rem 20px 1px rgba(0, 0, 0, 0.2); }
+    .login__button--login:active {
+      background-color: #db3d52;
+      box-shadow: 0rem 0.5rem 20px 0.5px rgba(0, 0, 0, 0.2); }

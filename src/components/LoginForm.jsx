@@ -32,45 +32,50 @@ function LoginForm() {
 	};
 
 	return (
-		<div className="container">
-			<div className="container__side-background">&nbsp;</div>
-			<form className="login-form" onSubmit={handleLogin}>
-				<div className="login">
-					<h2 className="login__item login__title">User Login</h2>
+		<>
+			<div className="login">
+				<form className="login__form" onSubmit={handleLogin}>
+					<h2 className="login__heading">User Login</h2>
+					<div className="login__group">
+						<div className="login__group--name">
+							<label htmlFor="login-name" className="login__label--name">
+								Name
+							</label>
+							<input
+								type="text"
+								className="login__input--name"
+								id="login-name"
+								placeholder="name"
+								required
+								value={username}
+								onChange={handleUsernameChange}
+							/>
+						</div>{' '}
+						<div className="login__group--password">
+							<label
+								htmlFor="login-password"
+								className="login__label--password"
+							>
+								Password
+							</label>
 
-					<label htmlFor="login-name" className="login__item">
-						Name
-					</label>
-					<input
-						type="text"
-						className="login__item login__input--name"
-						id="login-name"
-						placeholder="name"
-						required
-						value={username}
-						onChange={handleUsernameChange}
-					/>
-
-					<label htmlFor="login-password" className="login__item">
-						Password
-					</label>
-					<input
-						type="password"
-						className="login__item login__input--password"
-						id="login-password"
-						placeholder="password"
-						required
-						value={password}
-						onChange={handlePasswordChange}
-					/>
-
-					<button type="submit" className="login__item login__btn">
+							<input
+								type="password"
+								className="login__input--password"
+								id="login-password"
+								placeholder="password"
+								required
+								value={password}
+								onChange={handlePasswordChange}
+							/>
+						</div>
+					</div>
+					<button type="submit" className="login__button--login">
 						Login
 					</button>
-				</div>
-			</form>
-			<div className="container__bottom-background">&nbsp;</div>
-		</div>
+				</form>
+			</div>
+		</>
 	);
 }
 
