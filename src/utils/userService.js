@@ -117,19 +117,22 @@ export async function addOrder(cart, callback) {
 		//get the current time in the IS0 format (y-m-d h:m:s)
 		const currentTime = new Date().toISOString();
 
-		// iterate over the cart items to create an order objec
-		const newOrder = cart.map((item) => ({
-			orderId: orderId,
+		// iterate over the cart items to create new order item objects
+		const items = cart.map((item) => ({
 			id: item.id,
 			name: item.name,
 			quantity: item.quantity,
 			price: item.price,
+		}));
+		//create an order object
+		const newOrder = {
+			orderId: orderId,
+			items: items,
 			totalPrice: totalPrice,
 			time: currentTime,
-		}));
-
+		};
 		// Push the new order into the users orders array
-		user.orders.push(...newOrder);
+		user.orders.push(newOrder);
 
 		const response = await fetch(`http://localhost:7000/users/${user.id}`, {
 			method: 'PUT',
@@ -140,7 +143,7 @@ export async function addOrder(cart, callback) {
 		});
 		if (response.ok) {
 			localStorage.setItem('user', JSON.stringify(user));
-			callback(); // update the local state ( not sure if this is needed here, but it follows the rest of the design pattern)
+			callback(); // update the local state
 		} else {
 			return Promise.reject(new Error('Failed to add order'));
 		}

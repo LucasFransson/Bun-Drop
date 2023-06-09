@@ -1,16 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { getCart, clearCart } from '../utils/cartService';
 import { addOrder } from '../utils/userService';
 
 function Confirmation() {
+	// const cart = getCart();
+	// addOrder(cart).then(() => {
+	// 	clearCart();
+	// });
+
+	// const [cart, setCart] = useState(getCart());
+	// const [order, setOrder] = useState(null);
+
+	// useEffect(() => {
+	// 	setCart(getCart());
+	// }, []);
+
+	// useEffect(() => {
+	// 	setOrder(addOrder(cart));
+	// }, [cart]);
+
 	// var for holding the value of the cart/order
-	const cart = getCart();
+	const [cart, setCart] = useState(getCart());
+	useEffect(() => {
+		// add order(items in the cart) to the user in the database
+		addOrder(cart).then(() => {
+			// clear the cart
+			clearCart(); // completely clear the cart by removing the entire cart from local storage. TEST so this doesnt happen until after the confirmation page is rendered
+			setCart([]); //update the state
+		});
+	}, [cart]);
 
-	// add order(items in the cart) to the user in the database
-	addOrder(cart);
-
-	// clear the cart
-	clearCart(); // completely clear the cart by removing the entire cart from local storage. TEST so this doesnt happen until after the confirmation page is rendered
+	// For some reason I have to call the clearCart function here because the cart is not being cleared otherwise.
+	// This was not a problem before i updated the order function in userservice.js
+	// and i do not have the time to fix it now.
+	clearCart(); //clear the cart (TESTING)
 	return (
 		<div>
 			<h1>Order Confirmation</h1>

@@ -1,407 +1,568 @@
 {
-	"burgers": [
-		{
-			"id": 1,
-			"name": "Classic Beef Burger",
-			"image": "/public/images/burger3.png",
-			"category": "Meat",
-			"price": 10.99,
-			"description": "A timeless classic with our special seasoning.",
-			"ingredients": [
-				"Beef Patty",
-				"Lettuce",
-				"Tomato",
-				"Onion",
-				"Cheese",
-				"Bun"
-			],
-			"nutrients": {
-				"calories": 350,
-				"protein": 20,
-				"carbs": 32,
-				"fat": 17
-			}
-		},
-		{
-			"id": 2,
-			"name": "Chicken Delight",
-			"image": "/public/images/burger2.png",
-			"category": "Poultry",
-			"price": 9.99,
-			"description": "Juicy grilled chicken for a lighter touch.",
-			"ingredients": [
-				"Grilled Chicken",
-				"Lettuce",
-				"Tomato",
-				"Onion",
-				"Mayo",
-				"Bun"
-			],
-			"nutrients": {
-				"calories": 300,
-				"protein": 28,
-				"carbs": 33,
-				"fat": 9
-			}
-		},
-		{
-			"id": 3,
-			"name": "Spicy Bean Burger",
-			"image": "/public/images/burger4.png",
-			"category": "Vegan",
-			"price": 11.49,
-			"description": "A fiery explosion of taste with wholesome beans.",
-			"ingredients": [
-				"Bean Patty",
-				"Lettuce",
-				"Tomato",
-				"Onion",
-				"Vegan Cheese",
-				"Bun"
-			],
-			"nutrients": {
-				"calories": 320,
-				"protein": 18,
-				"carbs": 58,
-				"fat": 5
-			}
-		},
-		{
-			"id": 4,
-			"name": "Veggie Supreme",
-			"image": "/public/images/burger7.png",
-			"category": "Vegetarian",
-			"price": 10.49,
-			"description": "An array of fresh veggies packed into a delicious burger.",
-			"ingredients": [
-				"Veggie Patty",
-				"Lettuce",
-				"Tomato",
-				"Onion",
-				"Cheese",
-				"Bun"
-			],
-			"nutrients": {
-				"calories": 280,
-				"protein": 12,
-				"carbs": 41,
-				"fat": 8
-			}
-		},
-		{
-			"id": 5,
-			"name": "Cheese Lovers",
-			"image": "/public/images/burger1.png",
-			"category": "Meat",
-			"price": 11.99,
-			"description": "Loaded with an extra portion of cheese for the cheese fanatics.",
-			"ingredients": [
-				"Beef Patty",
-				"Double Cheese",
-				"Lettuce",
-				"Tomato",
-				"Onion",
-				"Bun"
-			],
-			"nutrients": {
-				"calories": 380,
-				"protein": 22,
-				"carbs": 32,
-				"fat": 20
-			}
-		},
-		{
-			"id": 6,
-			"name": "BBQ Bacon Burger",
-			"image": "/public/images/burger5.png",
-			"category": "Meat",
-			"price": 12.99,
-			"description": "A tangy BBQ burger topped with crispy bacon.",
-			"ingredients": [
-				"Beef Patty",
-				"Bacon",
-				"BBQ Sauce",
-				"Lettuce",
-				"Onion",
-				"Cheese",
-				"Bun"
-			],
-			"nutrients": {
-				"calories": 420,
-				"protein": 24,
-				"carbs": 35,
-				"fat": 22
-			}
-		},
-		{
-			"id": 7,
-			"name": "Garden Fresh Vegan",
-			"image": "",
-			"category": "Vegan",
-			"price": 11.99,
-			"description": "A true garden delight packed with fresh vegetables and a vegan patty.",
-			"ingredients": [
-				"Vegan Patty",
-				"Lettuce",
-				"Tomato",
-				"Cucumber",
-				"Avocado",
-				"Vegan Mayo",
-				"Bun"
-			],
-			"nutrients": {
-				"calories": 310,
-				"protein": 18,
-				"carbs": 45,
-				"fat": 8
-			}
-		},
-		{
-			"id": 8,
-			"name": "Mushroom Swiss Burger",
-			"image": "",
-			"category": "Meat",
-			"price": 12.49,
-			"description": "A juicy beef patty topped with Swiss cheese and mushrooms.",
-			"ingredients": [
-				"Beef Patty",
-				"Swiss Cheese",
-				"Mushrooms",
-				"Lettuce",
-				"Onion",
-				"Bun"
-			],
-			"nutrients": {
-				"calories": 380,
-				"protein": 22,
-				"carbs": 32,
-				"fat": 20
-			}
-		},
-		{
-			"id": 9,
-			"name": "Grilled Portobello",
-			"image": "",
-			"category": "Vegetarian",
-			"price": 11.49,
-			"description": "Grilled Portobello mushroom cap with fresh veggies and cheese.",
-			"ingredients": [
-				"Grilled Portobello",
-				"Lettuce",
-				"Tomato",
-				"Onion",
-				"Cheese",
-				"Bun"
-			],
-			"nutrients": {
-				"calories": 260,
-				"protein": 14,
-				"carbs": 36,
-				"fat": 7
-			}
-		},
-		{
-			"id": 10,
-			"name": "Beyond Meat Burger",
-			"image": "",
-			"category": "Vegan",
-			"price": 13.99,
-			"description": "A plant-based burger that tastes like real meat.",
-			"ingredients": [
-				"Beyond Meat Patty",
-				"Lettuce",
-				"Tomato",
-				"Onion",
-				"Vegan Cheese",
-				"Bun"
-			],
-			"nutrients": {
-				"calories": 370,
-				"protein": 20,
-				"carbs": 38,
-				"fat": 17
-			}
-		}
-	],
-	"drinks": [
-		{
-			"id": 1,
-			"name": "Classic Cola",
-			"image": "http://placekitten.com/200/300",
-			"category": "Soft Drink",
-			"price": 1.99,
-			"description": "The timeless classic, fizzy and refreshing.",
-			"ingredients": [
-				"Carbonated Water",
-				"High Fructose Corn Syrup",
-				"Caramel Color",
-				"Phosphoric Acid",
-				"Natural Flavors",
-				"Caffeine"
-			],
-			"nutrients": {
-				"calories": 150,
-				"sugar": 39
-			}
-		},
-		{
-			"id": 2,
-			"name": "Lemonade Splash",
-			"image": "http://placekitten.com/200/300",
-			"category": "Non-Alcoholic",
-			"price": 2.49,
-			"description": "A tangy, refreshing blend of lemons and sugar.",
-			"ingredients": ["Water", "Lemon Juice", "Sugar"],
-			"nutrients": {
-				"calories": 120,
-				"sugar": 30
-			}
-		},
-		{
-			"id": 3,
-			"name": "Iced Tea Delight",
-			"image": "http://placekitten.com/200/300",
-			"category": "Non-Alcoholic",
-			"price": 2.49,
-			"description": "Cool, calming, and deliciously refreshing.",
-			"ingredients": ["Water", "Black Tea", "Sugar"],
-			"nutrients": {
-				"calories": 100,
-				"sugar": 26
-			}
-		},
-		{
-			"id": 4,
-			"name": "Root Beer Float",
-			"image": "http://placekitten.com/200/300",
-			"category": "Dessert Drink",
-			"price": 3.99,
-			"description": "The classic combination of root beer and vanilla ice cream.",
-			"ingredients": ["Root Beer", "Vanilla Ice Cream"],
-			"nutrients": {
-				"calories": 350,
-				"sugar": 40
-			}
-		},
-		{
-			"id": 5,
-			"name": "Strawberry Milkshake",
-			"image": "http://placekitten.com/200/300",
-			"category": "Dessert Drink",
-			"price": 4.49,
-			"description": "Creamy, fruity, and utterly indulgent.",
-			"ingredients": [
-				"Strawberries",
-				"Milk",
-				"Vanilla Ice Cream",
-				"Whipped Cream"
-			],
-			"nutrients": {
-				"calories": 400,
-				"sugar": 45
-			}
-		},
-		{
-			"id": 6,
-			"name": "Tropical Smoothie",
-			"image": "http://placekitten.com/200/300",
-			"category": "Non-Alcoholic",
-			"price": 4.99,
-			"description": "A burst of tropical fruits in a glass.",
-			"ingredients": ["Banana", "Mango", "Pineapple", "Coconut Milk"],
-			"nutrients": {
-				"calories": 220,
-				"sugar": 30
-			}
-		},
-		{
-			"id": 7,
-			"name": "Berry Boost Smoothie",
-			"image": "http://placekitten.com/200/300",
-			"category": "Non-Alcoholic",
-			"price": 4.99,
-			"description": "Packed with antioxidants, as delicious as it is healthy.",
-			"ingredients": [
-				"Blueberries",
-				"Strawberries",
-				"Raspberries",
-				"Greek Yogurt"
-			],
-			"nutrients": {
-				"calories": 210,
-				"sugar": 28
-			}
-		},
-		{
-			"id": 8,
-			"name": "Chocolate Milkshake",
-			"image": "http://placekitten.com/200/300",
-			"category": "Dessert Drink",
-			"price": 4.49,
-			"description": "Rich, creamy, and irresistibly chocolatey.",
-			"ingredients": ["Chocolate Ice Cream", "Milk", "Whipped Cream"],
-			"nutrients": {
-				"calories": 410,
-				"sugar": 48
-			}
-		},
-		{
-			"id": 9,
-			"name": "Coffee Frappe",
-			"image": "http://placekitten.com/200/300",
-			"category": "Coffee Drink",
-			"price": 4.49,
-			"description": "A chilled blend of robust coffee, milk, and a touch of sweetness.",
-			"ingredients": ["Coffee", "Milk", "Sugar", "Ice"],
-			"nutrients": {
-				"calories": 180,
-				"sugar": 25
-			}
-		},
-		{
-			"id": 10,
-			"name": "Green Power Juice",
-			"image": "http://placekitten.com/200/300",
-			"category": "Non-Alcoholic",
-			"price": 4.99,
-			"description": "Energize your day with this blend of nutritious green fruits and vegetables.",
-			"ingredients": ["Kale", "Spinach", "Green Apple", "Celery", "Lemon"],
-			"nutrients": {
-				"calories": 140,
-				"sugar": 20
-			}
-		}
-	],
-	"users": [
-		{
-			"id": 1,
-			"name": "user",
-			"password": "password",
-			"favorites": [
-				{
-					"id": 1,
-					"name": "Classic Beef Burger",
-					"image": "/public/images/burger3.png",
-					"category": "Meat",
-					"price": 10.99,
-					"description": "A timeless classic with our special seasoning.",
-					"ingredients": [
-						"Beef Patty",
-						"Lettuce",
-						"Tomato",
-						"Onion",
-						"Cheese",
-						"Bun"
-					],
-					"nutrients": {
-						"calories": 350,
-						"protein": 20,
-						"carbs": 32,
-						"fat": 17
-					}
-				}
-			],
-			"orders": []
-		}
-	]
+  "burgers": [
+    {
+      "id": 1,
+      "name": "Classic Beef Burger",
+      "image": "/public/images/burger3.png",
+      "category": "Meat",
+      "price": 10.99,
+      "description": "A timeless classic with our special seasoning.",
+      "ingredients": [
+        "Beef Patty",
+        "Lettuce",
+        "Tomato",
+        "Onion",
+        "Cheese",
+        "Bun"
+      ],
+      "nutrients": {
+        "calories": 350,
+        "protein": 20,
+        "carbs": 32,
+        "fat": 17
+      }
+    },
+    {
+      "id": 2,
+      "name": "Chicken Delight",
+      "image": "/public/images/burger2.png",
+      "category": "Poultry",
+      "price": 9.99,
+      "description": "Juicy grilled chicken for a lighter touch.",
+      "ingredients": [
+        "Grilled Chicken",
+        "Lettuce",
+        "Tomato",
+        "Onion",
+        "Mayo",
+        "Bun"
+      ],
+      "nutrients": {
+        "calories": 300,
+        "protein": 28,
+        "carbs": 33,
+        "fat": 9
+      }
+    },
+    {
+      "id": 3,
+      "name": "Spicy Bean Burger",
+      "image": "/public/images/burger4.png",
+      "category": "Vegan",
+      "price": 11.49,
+      "description": "A fiery explosion of taste with wholesome beans.",
+      "ingredients": [
+        "Bean Patty",
+        "Lettuce",
+        "Tomato",
+        "Onion",
+        "Vegan Cheese",
+        "Bun"
+      ],
+      "nutrients": {
+        "calories": 320,
+        "protein": 18,
+        "carbs": 58,
+        "fat": 5
+      }
+    },
+    {
+      "id": 4,
+      "name": "Veggie Supreme",
+      "image": "/public/images/burger7.png",
+      "category": "Vegetarian",
+      "price": 10.49,
+      "description": "An array of fresh veggies packed into a delicious burger.",
+      "ingredients": [
+        "Veggie Patty",
+        "Lettuce",
+        "Tomato",
+        "Onion",
+        "Cheese",
+        "Bun"
+      ],
+      "nutrients": {
+        "calories": 280,
+        "protein": 12,
+        "carbs": 41,
+        "fat": 8
+      }
+    },
+    {
+      "id": 5,
+      "name": "Cheese Lovers",
+      "image": "/public/images/burger1.png",
+      "category": "Meat",
+      "price": 11.99,
+      "description": "Loaded with an extra portion of cheese for the cheese fanatics.",
+      "ingredients": [
+        "Beef Patty",
+        "Double Cheese",
+        "Lettuce",
+        "Tomato",
+        "Onion",
+        "Bun"
+      ],
+      "nutrients": {
+        "calories": 380,
+        "protein": 22,
+        "carbs": 32,
+        "fat": 20
+      }
+    },
+    {
+      "id": 6,
+      "name": "BBQ Bacon Burger",
+      "image": "/public/images/burger5.png",
+      "category": "Meat",
+      "price": 12.99,
+      "description": "A tangy BBQ burger topped with crispy bacon.",
+      "ingredients": [
+        "Beef Patty",
+        "Bacon",
+        "BBQ Sauce",
+        "Lettuce",
+        "Onion",
+        "Cheese",
+        "Bun"
+      ],
+      "nutrients": {
+        "calories": 420,
+        "protein": 24,
+        "carbs": 35,
+        "fat": 22
+      }
+    },
+    {
+      "id": 7,
+      "name": "Garden Fresh Vegan",
+      "image": "",
+      "category": "Vegan",
+      "price": 11.99,
+      "description": "A true garden delight packed with fresh vegetables and a vegan patty.",
+      "ingredients": [
+        "Vegan Patty",
+        "Lettuce",
+        "Tomato",
+        "Cucumber",
+        "Avocado",
+        "Vegan Mayo",
+        "Bun"
+      ],
+      "nutrients": {
+        "calories": 310,
+        "protein": 18,
+        "carbs": 45,
+        "fat": 8
+      }
+    },
+    {
+      "id": 8,
+      "name": "Mushroom Swiss Burger",
+      "image": "",
+      "category": "Meat",
+      "price": 12.49,
+      "description": "A juicy beef patty topped with Swiss cheese and mushrooms.",
+      "ingredients": [
+        "Beef Patty",
+        "Swiss Cheese",
+        "Mushrooms",
+        "Lettuce",
+        "Onion",
+        "Bun"
+      ],
+      "nutrients": {
+        "calories": 380,
+        "protein": 22,
+        "carbs": 32,
+        "fat": 20
+      }
+    },
+    {
+      "id": 9,
+      "name": "Grilled Portobello",
+      "image": "",
+      "category": "Vegetarian",
+      "price": 11.49,
+      "description": "Grilled Portobello mushroom cap with fresh veggies and cheese.",
+      "ingredients": [
+        "Grilled Portobello",
+        "Lettuce",
+        "Tomato",
+        "Onion",
+        "Cheese",
+        "Bun"
+      ],
+      "nutrients": {
+        "calories": 260,
+        "protein": 14,
+        "carbs": 36,
+        "fat": 7
+      }
+    },
+    {
+      "id": 10,
+      "name": "Beyond Meat Burger",
+      "image": "",
+      "category": "Vegan",
+      "price": 13.99,
+      "description": "A plant-based burger that tastes like real meat.",
+      "ingredients": [
+        "Beyond Meat Patty",
+        "Lettuce",
+        "Tomato",
+        "Onion",
+        "Vegan Cheese",
+        "Bun"
+      ],
+      "nutrients": {
+        "calories": 370,
+        "protein": 20,
+        "carbs": 38,
+        "fat": 17
+      }
+    }
+  ],
+  "drinks": [
+    {
+      "id": 1,
+      "name": "Classic Cola",
+      "image": "http://placekitten.com/200/300",
+      "category": "Soft Drink",
+      "price": 1.99,
+      "description": "The timeless classic, fizzy and refreshing.",
+      "ingredients": [
+        "Carbonated Water",
+        "High Fructose Corn Syrup",
+        "Caramel Color",
+        "Phosphoric Acid",
+        "Natural Flavors",
+        "Caffeine"
+      ],
+      "nutrients": {
+        "calories": 150,
+        "sugar": 39
+      }
+    },
+    {
+      "id": 2,
+      "name": "Lemonade Splash",
+      "image": "http://placekitten.com/200/300",
+      "category": "Non-Alcoholic",
+      "price": 2.49,
+      "description": "A tangy, refreshing blend of lemons and sugar.",
+      "ingredients": [
+        "Water",
+        "Lemon Juice",
+        "Sugar"
+      ],
+      "nutrients": {
+        "calories": 120,
+        "sugar": 30
+      }
+    },
+    {
+      "id": 3,
+      "name": "Iced Tea Delight",
+      "image": "http://placekitten.com/200/300",
+      "category": "Non-Alcoholic",
+      "price": 2.49,
+      "description": "Cool, calming, and deliciously refreshing.",
+      "ingredients": [
+        "Water",
+        "Black Tea",
+        "Sugar"
+      ],
+      "nutrients": {
+        "calories": 100,
+        "sugar": 26
+      }
+    },
+    {
+      "id": 4,
+      "name": "Root Beer Float",
+      "image": "http://placekitten.com/200/300",
+      "category": "Dessert Drink",
+      "price": 3.99,
+      "description": "The classic combination of root beer and vanilla ice cream.",
+      "ingredients": [
+        "Root Beer",
+        "Vanilla Ice Cream"
+      ],
+      "nutrients": {
+        "calories": 350,
+        "sugar": 40
+      }
+    },
+    {
+      "id": 5,
+      "name": "Strawberry Milkshake",
+      "image": "http://placekitten.com/200/300",
+      "category": "Dessert Drink",
+      "price": 4.49,
+      "description": "Creamy, fruity, and utterly indulgent.",
+      "ingredients": [
+        "Strawberries",
+        "Milk",
+        "Vanilla Ice Cream",
+        "Whipped Cream"
+      ],
+      "nutrients": {
+        "calories": 400,
+        "sugar": 45
+      }
+    },
+    {
+      "id": 6,
+      "name": "Tropical Smoothie",
+      "image": "http://placekitten.com/200/300",
+      "category": "Non-Alcoholic",
+      "price": 4.99,
+      "description": "A burst of tropical fruits in a glass.",
+      "ingredients": [
+        "Banana",
+        "Mango",
+        "Pineapple",
+        "Coconut Milk"
+      ],
+      "nutrients": {
+        "calories": 220,
+        "sugar": 30
+      }
+    },
+    {
+      "id": 7,
+      "name": "Berry Boost Smoothie",
+      "image": "http://placekitten.com/200/300",
+      "category": "Non-Alcoholic",
+      "price": 4.99,
+      "description": "Packed with antioxidants, as delicious as it is healthy.",
+      "ingredients": [
+        "Blueberries",
+        "Strawberries",
+        "Raspberries",
+        "Greek Yogurt"
+      ],
+      "nutrients": {
+        "calories": 210,
+        "sugar": 28
+      }
+    },
+    {
+      "id": 8,
+      "name": "Chocolate Milkshake",
+      "image": "http://placekitten.com/200/300",
+      "category": "Dessert Drink",
+      "price": 4.49,
+      "description": "Rich, creamy, and irresistibly chocolatey.",
+      "ingredients": [
+        "Chocolate Ice Cream",
+        "Milk",
+        "Whipped Cream"
+      ],
+      "nutrients": {
+        "calories": 410,
+        "sugar": 48
+      }
+    },
+    {
+      "id": 9,
+      "name": "Coffee Frappe",
+      "image": "http://placekitten.com/200/300",
+      "category": "Coffee Drink",
+      "price": 4.49,
+      "description": "A chilled blend of robust coffee, milk, and a touch of sweetness.",
+      "ingredients": [
+        "Coffee",
+        "Milk",
+        "Sugar",
+        "Ice"
+      ],
+      "nutrients": {
+        "calories": 180,
+        "sugar": 25
+      }
+    },
+    {
+      "id": 10,
+      "name": "Green Power Juice",
+      "image": "http://placekitten.com/200/300",
+      "category": "Non-Alcoholic",
+      "price": 4.99,
+      "description": "Energize your day with this blend of nutritious green fruits and vegetables.",
+      "ingredients": [
+        "Kale",
+        "Spinach",
+        "Green Apple",
+        "Celery",
+        "Lemon"
+      ],
+      "nutrients": {
+        "calories": 140,
+        "sugar": 20
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "user",
+      "password": "password",
+      "favorites": [],
+      "orders": [
+        {
+          "orderId": 417741,
+          "items": [
+            {
+              "id": 1,
+              "name": "Classic Beef Burger",
+              "quantity": 2,
+              "price": 10.99
+            },
+            {
+              "id": 2,
+              "name": "Chicken Delight",
+              "quantity": 2,
+              "price": 9.99
+            },
+            {
+              "id": 3,
+              "name": "Spicy Bean Burger",
+              "quantity": 1,
+              "price": 11.49
+            }
+          ],
+          "totalPrice": 53.45,
+          "time": "2023-06-09T15:57:05.529Z"
+        },
+        {
+          "orderId": 758882,
+          "items": [
+            {
+              "id": 1,
+              "name": "Classic Beef Burger",
+              "quantity": 1,
+              "price": 10.99
+            },
+            {
+              "id": 6,
+              "name": "BBQ Bacon Burger",
+              "quantity": 1,
+              "price": 12.99
+            },
+            {
+              "id": 9,
+              "name": "Grilled Portobello",
+              "quantity": 1,
+              "price": 11.49
+            }
+          ],
+          "totalPrice": 35.47,
+          "time": "2023-06-09T16:05:27.230Z"
+        },
+        {
+          "orderId": 587494,
+          "items": [
+            {
+              "id": 1,
+              "name": "Classic Beef Burger",
+              "quantity": 1,
+              "price": 10.99
+            },
+            {
+              "id": 9,
+              "name": "Grilled Portobello",
+              "quantity": 3,
+              "price": 11.49
+            }
+          ],
+          "totalPrice": 45.46,
+          "time": "2023-06-09T16:06:04.268Z"
+        },
+        {
+          "orderId": 363995,
+          "items": [
+            {
+              "id": 1,
+              "name": "Classic Beef Burger",
+              "quantity": 4,
+              "price": 10.99
+            },
+            {
+              "id": 9,
+              "name": "Grilled Portobello",
+              "quantity": 3,
+              "price": 11.49
+            }
+          ],
+          "totalPrice": 78.43,
+          "time": "2023-06-09T16:08:19.422Z"
+        },
+        {
+          "orderId": 899257,
+          "items": [
+            {
+              "id": 4,
+              "name": "Veggie Supreme",
+              "quantity": 1,
+              "price": 10.49
+            }
+          ],
+          "totalPrice": 10.49,
+          "time": "2023-06-09T16:10:33.577Z"
+        },
+        {
+          "orderId": 333368,
+          "items": [],
+          "totalPrice": 0,
+          "time": "2023-06-09T16:11:40.037Z"
+        },
+        {
+          "orderId": 939328,
+          "items": [
+            {
+              "id": 3,
+              "name": "Spicy Bean Burger",
+              "quantity": 2,
+              "price": 11.49
+            },
+            {
+              "id": 8,
+              "name": "Mushroom Swiss Burger",
+              "quantity": 2,
+              "price": 12.49
+            }
+          ],
+          "totalPrice": 47.96,
+          "time": "2023-06-09T16:14:01.828Z"
+        },
+        {
+          "orderId": 697038,
+          "items": [
+            {
+              "id": 2,
+              "name": "Chicken Delight",
+              "quantity": 1,
+              "price": 9.99
+            }
+          ],
+          "totalPrice": 9.99,
+          "time": "2023-06-09T16:15:43.850Z"
+        },
+        {
+          "orderId": 172566,
+          "items": [
+            {
+              "id": 2,
+              "name": "Chicken Delight",
+              "quantity": 1,
+              "price": 9.99
+            }
+          ],
+          "totalPrice": 9.99,
+          "time": "2023-06-09T16:16:24.210Z"
+        }
+      ]
+    }
+  ]
 }
