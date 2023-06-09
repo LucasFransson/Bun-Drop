@@ -329,8 +329,8 @@
 .main {
 	display: flex;
 	flex-direction: column;
-	padding: 2rem 0;
-	background-color: $color-gray-light-1;
+	padding-bottom: 2rem;
+	background-color: $color-white-1;
 	height: 100%;
 	// width: 100%;
 	flex: 7; // 70 % of the content
