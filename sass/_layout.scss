@@ -889,12 +889,6 @@
 			width: 30%;
 		}
 	}
-	&__ingredients__item,
-	&__nutrients__item {
-		// height: 2rem;
-		// width: 2rem;
-		// fill: $color-gray-dark-1;
-	}
 
 	&__button--add-cart {
 		border: none;
@@ -907,6 +901,10 @@
 		margin-left: 2rem;
 		text-transform: uppercase;
 		cursor: pointer;
+
+		@include responsive(phone) {
+			margin-left: 27%;
+		}
 	}
 
 	&__button--favorite {
@@ -1017,6 +1015,11 @@
 	flex-direction: row;
 	height: 100%;
 	width: 100%;
+
+	@include responsive(phone) {
+		flex-direction: column;
+		font-size: 2.2rem;
+	}
 
 	&__left-container {
 		flex: 6;
@@ -1148,6 +1151,20 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+
+	& h2 {
+		@include responsive(phone) {
+			text-align: center;
+			margin-top: 5rem;
+			margin-bottom: 2rem;
+			font-size: 4rem;
+			border-bottom: 2px solid $color-gray-dark-1;
+		}
+	}
+	@include responsive(phone) {
+		flex-direction: column;
+		align-items: center;
+	}
 	&__favorites {
 	}
 	&__orders {

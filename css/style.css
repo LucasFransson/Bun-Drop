@@ -626,6 +626,9 @@ input[type='number'] {
     margin-left: 2rem;
     text-transform: uppercase;
     cursor: pointer; }
+    @media only screen and (max-width: 37.5em) {
+      .product__button--add-cart {
+        margin-left: 27%; } }
   .product__button--favorite {
     width: 4rem;
     height: 4rem;
@@ -640,6 +643,10 @@ input[type='number'] {
   flex-direction: row;
   height: 100%;
   width: 100%; }
+  @media only screen and (max-width: 37.5em) {
+    .cart {
+      flex-direction: column;
+      font-size: 2.2rem; } }
   .cart__left-container {
     flex: 6;
     height: 100%;
@@ -725,6 +732,17 @@ input[type='number'] {
   display: flex;
   flex-direction: row;
   justify-content: space-around; }
+  @media only screen and (max-width: 37.5em) {
+    .user-page h2 {
+      text-align: center;
+      margin-top: 5rem;
+      margin-bottom: 2rem;
+      font-size: 4rem;
+      border-bottom: 2px solid #404040; } }
+  @media only screen and (max-width: 37.5em) {
+    .user-page {
+      flex-direction: column;
+      align-items: center; } }
 
 .login {
   background-color: #fff;
