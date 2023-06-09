@@ -11,16 +11,16 @@ $breakpoint argument choices
 -tab-land
 -big-desktop
 */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit; }
-
-html {
-  font-size: 62.5%;
-  box-sizing: border-box; }
 
 body {
   font-size: 1.6rem;
@@ -266,7 +266,7 @@ input[type='number'] {
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to bottom, #c72c41, #801336);
+    background: linear-gradient(to bottom, #c72c41 0%, #801336 60%);
     clip-path: polygon(0 0, 100% 0, 100% 60%, 0 80%);
     z-index: 0; }
     @media only screen and (max-width: 37.5em) {

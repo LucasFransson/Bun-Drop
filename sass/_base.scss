@@ -18,6 +18,10 @@ $color-black-2: #140b0e; // color blackish redish
 
 $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 
+html {
+	font-size: 62.5%; // For rem purposes. Sets the html font to 10px, so 1rem = 10px. Using the % value to support users who changes browser fontsize.
+	box-sizing: border-box;
+}
 *,
 *::before,
 *::after {
@@ -25,12 +29,6 @@ $--shadow-dark: 0 3rem 7rem rgba(0, 0, 0, 0.3);
 	padding: 0;
 	box-sizing: inherit;
 }
-
-html {
-	font-size: 62.5%; // For rem purposes. Sets the html font to 10px, so 1rem = 10px. Using the % value to support users who changes browser fontsize.
-	box-sizing: border-box;
-}
-
 body {
 	font-size: 1.6rem;
 	font-family: 'Lato', sans-serif;
