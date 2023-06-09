@@ -11,8 +11,8 @@ import {
 	getUserName,
 	getUserId,
 } from '../utils/userService';
-import { ReactComponent as HeartIcon } from '/public/svg/SVG/heart1.svg';
-import { ReactComponent as BrokenHeartIcon } from '/public/svg/SVG/heart-broken.svg';
+import { ReactComponent as HeartIcon } from '/public/svg/SVG/heart.svg';
+import { ReactComponent as HeartIconOutlined } from '/public/svg/SVG/heart-outlined.svg';
 
 function ProductPage() {
 	const { burgerId } = useParams();
@@ -43,12 +43,12 @@ function ProductPage() {
 			<div className="product">
 				<div className="product__main">
 					{isFavorite ? (
-						<BrokenHeartIcon
+						<HeartIconOutlined
 							onClick={async () => {
 								await removeFavorite(burger, checkFavoriteStatus);
 							}}
 							className="product__button--favorite"
-						></BrokenHeartIcon>
+						></HeartIconOutlined>
 					) : (
 						<HeartIcon
 							onClick={async () => {
