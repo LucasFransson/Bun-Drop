@@ -670,6 +670,8 @@
 .grid-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+	justify-items: center;
+
 	&__item {
 	}
 }
@@ -892,8 +894,9 @@
 			margin-bottom: 10rem;
 
 			&--disabled {
-				opacity: 0.5;
 				pointer-events: none;
+				cursor: not-allowed; // why is this not working?
+				opacity: 0.5;
 			}
 		}
 	}

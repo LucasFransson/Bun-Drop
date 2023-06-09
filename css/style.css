@@ -482,7 +482,8 @@ input[type='number'] {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr)); }
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  justify-items: center; }
 
 .card {
   background-color: #191e29;
@@ -599,5 +600,6 @@ input[type='number'] {
   .cart-checkout__button-confirm {
     margin-bottom: 10rem; }
     .cart-checkout__button-confirm--disabled {
-      opacity: 0.5;
-      pointer-events: none; }
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 0.5; }

@@ -1,10 +1,15 @@
 import React from 'react';
-import { getCart, clearCart, emptyCart } from '../utils/cartService';
+import { getCart, clearCart } from '../utils/cartService';
+import { addOrder } from '../utils/userService';
 
 function Confirmation() {
+	// var for holding the value of the cart/order
 	const cart = getCart();
 
-	//emptyCart();
+	// add order(items in the cart) to the user in the database
+	addOrder(cart);
+
+	// clear the cart
 	clearCart(); // completely clear the cart by removing the entire cart from local storage. TEST so this doesnt happen until after the confirmation page is rendered
 	return (
 		<div>

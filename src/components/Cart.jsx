@@ -18,6 +18,7 @@ import {
 	removeFromCart,
 } from '../utils/cartService';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getCart } from '../utils/cartService';
 import { ReactComponent as BinIcon } from '/public/svg/SVG/bin.svg';
 import { ReactComponent as MinusIcon } from '/public/svg/SVG/minus.svg';
@@ -49,12 +50,67 @@ function Cart() {
 	};
 
 	const totalPrice = getTotalPrice();
+	const navigate = useNavigate();
 
 	const [paymentMethod, setPaymentMethod] = useState('');
 	const [phoneNumber, setPhoneNumber] = useState('');
 	const [cardNumber, setCardNumber] = useState('');
 	const [expirationDate, setExpirationDate] = useState('');
 	const [cvc, setCvc] = useState('');
+	const [errors, setErrors] = useState({});
+
+	const [city, setCity] = useState('');
+	const [street, setStreet] = useState('');
+	const [houseNumber, setHouseNumber] = useState('');
+
+	const validateInputs = () => {
+		let errors = {};
+
+		// Paytment information
+		if (paymentMethod === 'card') {
+			if (cardNumber.length !== 16) {
+				errors.cardNumber = 'Card number must be 16 digits';
+			}
+
+			if (expirationDate.length !== 4) {
+				errors.expiryDate = 'Expiry date must be 4 digits';
+			}
+
+			if (cvc.length !== 3) {
+				errors.cvc = 'CVC must be 3 digits';
+			}
+		} else if (paymentMethod === 'swish') {
+			if (phoneNumber.length !== 10) {
+				errors.phoneNumber = 'Phone number must be 10 digits';
+			}
+		}
+		// Adress/Delievery Information
+		if (!city.trim()) {
+			errors.city = 'City is required';
+		}
+
+		if (!street.trim()) {
+			errors.street = 'Street is required';
+		}
+
+		if (!houseNumber.trim()) {
+			errors.houseNumber = 'House number is required';
+		}
+
+		setErrors(errors);
+
+		// return true if there is no errors
+		return Object.keys(errors).length === 0;
+	};
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		if (validateInputs()) {
+			// setCart([]);
+			//alert('Your order has been confirmed'); // TESTING PURPOSES ONLY
+			navigate('/confirmation');
+		}
+	};
 
 	return (
 		<div className="cart">
@@ -88,78 +144,106 @@ function Cart() {
 			</div>
 			{/* RIGHT SIDE CONTAINER / TOTAL CHECKOUT */}
 			<div className="cart__right-container">
-				<h2 className="cart-total__heading">
-					Total: {cart.length > 0 ? `$${totalPrice}` : 'Cart is empty'}
-				</h2>
-				<div className="cart-checkout__checkbox-container">
-					<label htmlFor="checkbox-swish">Swish</label>
+				<form onSubmit={(event) => handleSubmit(event)}>
+					<h2 className="cart-total__heading">
+						Total: {cart.length > 0 ? `$${totalPrice}` : 'Cart is empty'}
+					</h2>
+					{/* ADRESS/ DELIEVERY  */}
+					<label htmlFor="city">City:</label>
 					<input
-						type="checkbox"
-						id="checkbox-swish"
-						checked={paymentMethod === 'swish'}
-						onChange={() => setPaymentMethod('swish')}
+						type="text"
+						id="city"
+						value={city}
+						onChange={(e) => setCity(e.target.value)}
 					/>
-					<label htmlFor="checkbox-card">Card</label>
+					{errors.city && <p>{errors.city}</p>}
+
+					<label htmlFor="street">Street:</label>
 					<input
-						type="checkbox"
-						id="checkbox-card"
-						checked={paymentMethod === 'card'}
-						onChange={() => setPaymentMethod('card')}
+						type="text"
+						id="street"
+						value={street}
+						onChange={(e) => setStreet(e.target.value)}
 					/>
-				</div>
-				{/* SWISH PAYMENT METHOD */}
-				{paymentMethod === 'swish' && (
-					<div className="cart-checkout__swish-container">
-						<label htmlFor="phone-number">Phone Number:</label>
+					{errors.street && <p>{errors.street}</p>}
+
+					<label htmlFor="house-number">House Number:</label>
+					<input
+						type="text"
+						id="house-number"
+						value={houseNumber}
+						onChange={(e) => setHouseNumber(e.target.value)}
+					/>
+					{errors.houseNumber && <p>{errors.houseNumber}</p>}
+					<div className="cart-checkout__checkbox-container">
+						<label htmlFor="checkbox-swish">Swish</label>
 						<input
-							type="number"
-							id="phone-number"
-							value={phoneNumber}
-							onChange={(e) => setPhoneNumber(e.target.value)}
+							type="checkbox"
+							id="checkbox-swish"
+							checked={paymentMethod === 'swish'}
+							onChange={() => setPaymentMethod('swish')}
+						/>
+						{/* PAYMENT INFORMATION */}
+						<label htmlFor="checkbox-card">Card</label>
+						<input
+							type="checkbox"
+							id="checkbox-card"
+							checked={paymentMethod === 'card'}
+							onChange={() => setPaymentMethod('card')}
 						/>
 					</div>
-				)}
-				{/* CARD PAYMENT METHOD */}
-				{paymentMethod === 'card' && (
-					<div className="cart-checkout__card-container">
-						<label htmlFor="card-number">Card Number:</label>
-						<input
-							type="number"
-							id="card-number"
-							maxLength="16"
-							value={cardNumber}
-							onChange={(e) => setCardNumber(e.target.value)}
-						/>
-						<label htmlFor="expiration-date">Expiry Date:</label>
-						<input
-							type="number"
-							id="expiration-date"
-							maxLength="4"
-							value={expirationDate}
-							onChange={(e) => setExpirationDate(e.target.value)}
-						/>
-						<label htmlFor="cvc">CVC:</label>
-						<input
-							type="number"
-							id="cvc"
-							maxLength="3"
-							value={cvc}
-							onChange={(e) => setCvc(e.target.value)}
-						/>
-					</div>
-				)}
-				{cart.length > 0 &&
-				((paymentMethod === 'swish' && phoneNumber) ||
-					(paymentMethod === 'card' &&
-						cardNumber.length === 16 &&
-						expiryDate.length === 4 &&
-						cvc.length === 3)) ? (
-					<Link to={'/confirmation'} className="cart-checkout__button-confirm">
+					{/* SWISH PAYMENT METHOD */}
+					{paymentMethod === 'swish' && (
+						<div className="cart-checkout__swish-container">
+							<label htmlFor="phone-number">Phone Number:</label>
+							<input
+								type="number"
+								id="phone-number"
+								value={phoneNumber}
+								onChange={(e) => setPhoneNumber(e.target.value)}
+							/>
+							{errors.phoneNumber && <p>{errors.phoneNumber}</p>}
+						</div>
+					)}
+					{/* CARD PAYMENT METHOD */}
+					{paymentMethod === 'card' && (
+						<div className="cart-checkout__card-container">
+							<label htmlFor="card-number">Card Number:</label>
+							<input
+								type="number"
+								id="card-number"
+								value={cardNumber}
+								onChange={(e) => setCardNumber(e.target.value)}
+							/>
+							{errors.cardNumber && <p>{errors.cardNumber}</p>}
+
+							<label htmlFor="expiration-date">Expiry Date:</label>
+							<input
+								type="number"
+								id="expiration-date"
+								value={expirationDate}
+								onChange={(e) => setExpirationDate(e.target.value)}
+							/>
+							{errors.expiryDate && <p>{errors.expiryDate}</p>}
+
+							<label htmlFor="cvc">CVC:</label>
+							<input
+								type="number"
+								id="cvc"
+								value={cvc}
+								onChange={(e) => setCvc(e.target.value)}
+							/>
+							{errors.cvc && <p>{errors.cvc}</p>}
+						</div>
+					)}
+					<button
+						type="submit"
+						className="cart-checkout__button-confirm"
+						disabled={cart.length === 0}
+					>
 						CONFIRM
-					</Link>
-				) : (
-					<div className="cart-checkout__button-confirm--disabled">CONFIRM</div>
-				)}
+					</button>
+				</form>
 			</div>
 		</div>
 	);

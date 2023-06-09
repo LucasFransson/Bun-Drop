@@ -1,3 +1,6 @@
+// THIS ENTIRE COMPONENTS HERO SECTION STRUCTURE & CSS SHOULD BE REFACTORED !
+// Problem with aligning elements in a responsive manner ( change to grid and dont seperate text button & image in seperate divs)
+
 import { Link } from 'react-router-dom';
 
 function Main() {
